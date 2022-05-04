@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="图的定义图是由顶点的有穷非空集合V ( G ) 和顶点之间边的集合E ( G )组成，表示为G&#x3D;（V，E）。V中元素的个数为G中顶点的个数，也是图的阶数，E中元素的个数为G的边数。 图不能是空图，顶点集不能为空 ，至少有一个顶点，边集可以为空。 基本概念阶：图G中点集V的大小称作图G的阶有向图：无向图：重复边：无向图中为两顶点相同的边，有向图中为起点终点相同的边简单图：①不存在重复边;②">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生产队的记事本">
+<meta property="og:url" content="http://example.com/2022/05/03/%E5%9B%BE/index.html">
+<meta property="og:site_name" content="生产队的记事本">
+<meta property="og:description" content="图的定义图是由顶点的有穷非空集合V ( G ) 和顶点之间边的集合E ( G )组成，表示为G&#x3D;（V，E）。V中元素的个数为G中顶点的个数，也是图的阶数，E中元素的个数为G的边数。 图不能是空图，顶点集不能为空 ，至少有一个顶点，边集可以为空。 基本概念阶：图G中点集V的大小称作图G的阶有向图：无向图：重复边：无向图中为两顶点相同的边，有向图中为起点终点相同的边简单图：①不存在重复边;②">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/image-20220503195430416.png">
+<meta property="article:published_time" content="2022-05-03T02:24:02.977Z">
+<meta property="article:modified_time" content="2022-05-04T04:01:33.040Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/image-20220503195430416.png">
+
+<link rel="canonical" href="http://example.com/2022/05/03/%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 生产队的记事本</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">生产队的记事本</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/03/%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img1.baidu.com/it/u=1025093357,476301700&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="sakura 最好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生产队的记事本">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-03 10:24:02" itemprop="dateCreated datePublished" datetime="2022-05-03T10:24:02+08:00">2022-05-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-04 12:01:33" itemprop="dateModified" datetime="2022-05-04T12:01:33+08:00">2022-05-04</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h1><p>图是由顶点的有穷非空集合V ( G ) 和顶点之间边的集合E ( G )组成，表示为G&#x3D;（V，E）。V中元素的个数为G中顶点的个数，也是图的阶数，E中元素的个数为G的边数。</p>
+<p>图不能是空图，顶点集不能为空 ，至少有一个顶点，边集可以为空。</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>阶：图G中点集V的大小称作图G的阶<br>有向图：<br>无向图：<br>重复边：无向图中为两顶点相同的边，有向图中为起点终点相同的边<br>简单图：①不存在重复边;②不存在顶点到自身的边（自环）<br>多重图：不满足简单图的其中一点<br>完全图：也称简单完全图  无向完全图和有向完全图都为完全图<br>稠密图：有很少边或孤的图 通常用邻接矩阵实现<br>稀疏图：有较多边或孤的图 通常用邻接表实现<br>子图：设有两个图G&#x3D;（V，E）和G’&#x3D;（V’，E’），若V’是V的子集，且E’是E的子集，则称G’是G的子图<br>生成子图：设有两个图G&#x3D;（V，E）和G’&#x3D;（V’，E’），若V’等于V，且E’是E的子集，则称G’是G的生成子图<br>连通：无向图中，从一个顶点到另一顶点有路径存在 则称这两个顶点连通<br>连通图： 图G中任意连各个顶点都是连通的，则称图G为连通图<br>连通分量：无向图中极大连通子图称为连通分量<br>强连通图：在有向图中，若从顶点v到顶点w和从顶点w到项点v之间都有路径,则称这两个顶点是强连通的，任意两点皆如此，则称该有向图为强连通图<br>强连通分量：有向图中的极大强连通子图称为强连通分量<br>度：无向图中顶点依赖的边的条数<br>入度：有向图中以顶点v为终点的边的条数<br>出度：有向图中以顶点v为起点的边的条数</p>
+<h1 id="图的实现"><a href="#图的实现" class="headerlink" title="图的实现"></a>图的实现</h1><h2 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h2><p>邻接矩阵比较简单  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct&#123;</span><br><span class="line">	vextype Vex[Max];	//顶点表</span><br><span class="line">	int Edge[Max][Max];	//邻接矩阵</span><br><span class="line">	int vexnum, arcnum;	//图的当前顶点数边</span><br><span class="line">&#125;MGraph;</span><br></pre></td></tr></table></figure>
+
+<p>存储结构大致如此  简单应用中只用二维数组即可，不需要顶点表<br>对规模特大的邻接矩阵可采用压缩存储<br>适用于稠密图</p>
+<h2 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h2><ul>
+<li>头插法</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define MAX 20</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">typedef struct Bianjiedian</span><br><span class="line">&#123;</span><br><span class="line">	int num;</span><br><span class="line">	int weight;</span><br><span class="line">	struct Bianjiedian* next;</span><br><span class="line">&#125;bianjiedian;     //边节点</span><br><span class="line"></span><br><span class="line">typedef struct Dingdian</span><br><span class="line">&#123;</span><br><span class="line">	char name;</span><br><span class="line">	bianjiedian* next;</span><br><span class="line">&#125;dingdian[MAX];   //顶点</span><br><span class="line"></span><br><span class="line">typedef struct Graph</span><br><span class="line">&#123;</span><br><span class="line">	dingdian  vex;</span><br><span class="line">	int vexnum,edgenum;</span><br><span class="line">&#125;GGraph;</span><br><span class="line"></span><br><span class="line">void  creatgraph(Graph &amp;graph)</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;输入顶点数和边数&quot;;</span><br><span class="line">	cin&gt;&gt;graph.vexnum&gt;&gt;graph.edgenum; </span><br><span class="line">	for(int i=0;i&lt;graph.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;&quot;输入顶点名&quot;;</span><br><span class="line">		cin&gt;&gt;graph.vex[i].name;</span><br><span class="line">		graph.vex[i].next=NULL;</span><br><span class="line">	&#125;           //输入顶点</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	for(int i=1;i&lt;=graph.edgenum;i++)</span><br><span class="line">	&#123;	</span><br><span class="line">		int x,y,z;</span><br><span class="line">		cout&lt;&lt;&quot;输入第&quot;&lt;&lt;i&lt;&lt;&quot;条边的两个顶点序号和权重&quot;;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;</span><br><span class="line">		</span><br><span class="line">		bianjiedian* newnode1 = new bianjiedian;</span><br><span class="line">		newnode1-&gt;num=x;</span><br><span class="line">		newnode1-&gt;weight=z;</span><br><span class="line">		newnode1-&gt;next=graph.vex[y].next;</span><br><span class="line">		graph.vex[y].next=newnode1;</span><br><span class="line">		</span><br><span class="line">		bianjiedian* newnode2 = new bianjiedian;</span><br><span class="line">		newnode2-&gt;num=y;</span><br><span class="line">		newnode2-&gt;weight=z;</span><br><span class="line">		newnode2-&gt;next=graph.vex[x].next;</span><br><span class="line">		graph.vex[x].next=newnode2;</span><br><span class="line">		</span><br><span class="line">	&#125;			//头插法</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	GGraph graph;</span><br><span class="line">	creatgraph(graph);</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	for(int i=0;i&lt;graph.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; graph.vex[i].name &lt;&lt; &quot;-&gt;&quot;;</span><br><span class="line">		bianjiedian* p=graph.vex[i].next;</span><br><span class="line">		while(p)</span><br><span class="line">		&#123;</span><br><span class="line">			cout&lt;&lt;p-&gt;num&lt;&lt;&quot;-&gt;&quot;;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt;&quot;NULL&quot;&lt;&lt;endl;</span><br><span class="line">		</span><br><span class="line">	&#125;//输出</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>尾插法</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;=graph.edgenum;i++)</span><br><span class="line">	&#123;	</span><br><span class="line">		int x,y,z;</span><br><span class="line">		cout&lt;&lt;&quot;输入第&quot;&lt;&lt;i&lt;&lt;&quot;条边的两个顶点序号和权重&quot;;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;</span><br><span class="line">		</span><br><span class="line">		bianjiedian* newnode1 = new bianjiedian;</span><br><span class="line">		newnode1-&gt;num=x;</span><br><span class="line">		newnode1-&gt;weight=z;</span><br><span class="line">		newnode1-&gt;next = NULL;</span><br><span class="line">		if(!graph.vex[y].next) graph.vex[y].next=newnode1;</span><br><span class="line">		else &#123;</span><br><span class="line">		bianjiedian* t=graph.vex[y].next;</span><br><span class="line">		while(t&amp;&amp;t-&gt;next) t=t-&gt;next;</span><br><span class="line">		t-&gt;next=newnode1;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">		bianjiedian* newnode2 = new bianjiedian;</span><br><span class="line">		newnode2-&gt;num=y;</span><br><span class="line">		newnode2-&gt;weight=z;</span><br><span class="line">		newnode2-&gt;next = NULL;</span><br><span class="line">		if(!graph.vex[x].next) graph.vex[x].next=newnode2;</span><br><span class="line">		else &#123;</span><br><span class="line">		bianjiedian* s=graph.vex[x].next;</span><br><span class="line">		while(s&amp;&amp;s-&gt;next) s=s-&gt;next;</span><br><span class="line">		s-&gt;next=newnode2;	</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意要写 newnode-&gt;next&#x3D;NULL 否则会死循环</p>
+<p>邻接表适用用稀疏图</p>
+<h1 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h1><h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>BFS是分层查找的过程，类似于树的层序遍历，即每向前遍历一步会访问一批节点，不存在回溯的过程，所以会要借助队列实现</p>
+<ol>
+<li>访问起始点v</li>
+<li>之后，依次访问v的各个未曾访问过的邻接点</li>
+<li>再分别从这些邻接点出发，访问他们的未被访问过的邻接点；</li>
+<li>直至图中所有顶点都被访问过为止</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool visited[MAX_VERTEX_NUM];   		//标记数组</span><br><span class="line">void BFStraverse (Graph G) &#123;</span><br><span class="line">//对图G进行广度优先遍历</span><br><span class="line">   for(i=0; i&lt;G.vexnum, i++)</span><br><span class="line">   	visited[i]=FALSE;					//访问标记数组初始化</span><br><span class="line">   queue Q;							</span><br><span class="line">   for(i=0; i&lt;G.vexnum; i++ )			</span><br><span class="line">   	if(!visited[il)</span><br><span class="line">       	BFS(G, i);					//对每个连通分量调用一次BFS</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BFS(Graph G,int v) &#123;</span><br><span class="line">   cout&lt;&lt;v;						//输出v</span><br><span class="line">   visited[v]=TRUE;					//v已访问</span><br><span class="line">   Q.push(v);						//v入队列</span><br><span class="line">   while(!isEmpty(Q)) &#123;</span><br><span class="line">   	Q.pop();					//v出队列</span><br><span class="line">   for(j=firstneighbor(G, v); j&gt;=0; j=nextneighbor(G, v, j))//检测v所有邻接点 这里要看使用邻接矩阵还是邻接表了</span><br><span class="line">   		if(!visited[j])&#123; 			//j为v的尚未访问的邻接顶点</span><br><span class="line">   			cout&lt;&lt;j;				//输出j</span><br><span class="line">   			visited[j]=TRUE;		//j已访问</span><br><span class="line">   			Q.push(j); 			//j入队列</span><br><span class="line">   		&#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>DFS类似于树的先序遍历，每次遍历访问一个节点，直到不能再继续访问再回溯。</p>
+<ol>
+<li><p>访问图中的某一起始顶点v</p>
+</li>
+<li><p>由v出发，访问与v相连，并且没有被访问过的顶点w</p>
+</li>
+<li><p>访问与w相邻但是并没有被访问过的顶点x</p>
+</li>
+<li><p>当不能向下访问的时候，依次退回到最近被访问的顶点</p>
+</li>
+<li><p>访问直至所有顶点均被访问过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">bool visited[MAX_VERTEX_NUM];	//标记数组</span><br><span class="line">void DFSTraverse(Graph G)&#123;</span><br><span class="line">	for(int v = 0;v &lt; G.vexnum;v++)    //vexnum表示顶点数</span><br><span class="line">		visited[v] = false;</span><br><span class="line">	for(int v = 0;v &lt; G.vexnum;v++)</span><br><span class="line">		if(!visited[v])</span><br><span class="line">			DFS(G,v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DFS(Graph G,int v)&#123;</span><br><span class="line">	cout&lt;&lt;v;          //输出v</span><br><span class="line">	visited[v] = true;</span><br><span class="line">	for(w = FirstNeighbor(G,v);w&gt;=0;w = NextNeighbor(G,v,w)) // 寻找邻接点</span><br><span class="line">   &#123;</span><br><span class="line">		if(!visited[v])</span><br><span class="line">			DFS(G,w);     //递归</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设G &#x3D; ( V , E ) G&#x3D;(V,E)G&#x3D;(V,E)是一个具有n个顶点的有向图，V中的顶点序列V1 , V2 , . . . Vn ，若Vi到Vj有一条路径，则在顶点序列中，Vi要在Vj之前，我们称这样的顶点序列为一个拓扑序列<br><strong>拓扑排序，就是对一个有向图构造拓扑序列的过程</strong><br>在一个表示工程的有向图中，用顶点表示活动，用边表示活动之间的优先关系，这样的有向图为顶点表示活动的网，我们称为AOV网<br>通常会用拓扑排序来处理AOV网问题    AOV网的拓扑排序可能会有多个</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ol>
+<li><p>从AOV网中选择一个没有前驱的顶点并输出。</p>
+</li>
+<li><p>从网中删除该顶点和所有以它为起点的有向边。</p>
+</li>
+<li><p>重复1和2直到当前的AOV网为空或当前网中不存在无前驱的顶点为止。如果输出顶点数少了，就说明这个网存在环(回路)，不是AOV网。</p>
+</li>
+</ol>
+<p><img src="/../image/image-20220503195430416.png" alt="image-20220503195430416"></p>
+<p>该AOV网的拓扑排序为  12435<br>（伪码）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">bool TopologicalSort(Graph G)&#123;</span><br><span class="line">	stack s;	//初始化栈，存储入度为0的顶点</span><br><span class="line">	for(int i=0; i&lt;G.vexnum; i++)&#123;</span><br><span class="line">		if(indegree[i] == 0)&#123;</span><br><span class="line">			s.push(i);	//将所有入度为0的顶点进栈</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	int count = 0;	//计数，记录当前已经输出的顶点数</span><br><span class="line">	while(!IsEmpty(S))&#123;	//栈不空，则存在入度为0的顶点</span><br><span class="line">		cout&lt;&lt;s.top();		</span><br><span class="line">		s.pop();	    //顶点元素出栈</span><br><span class="line">		count++;</span><br><span class="line">		for(p=firstneighber(v); p; p=p-&gt;next)&#123;</span><br><span class="line">			//将所有i指向的顶点的入度减1，并且将入度减为0的顶点压入栈S</span><br><span class="line">			v = p-&gt;num;</span><br><span class="line">			if(!--indegree[v])&#123;</span><br><span class="line">				Push(S, v);	      //入度为0，则入栈</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(count &lt; G.vexnum)&#123;</span><br><span class="line">		return false;	//输出顶点少了，有向图中存在回路，排序失败</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h2><p>如果连通图G的一个子图是一棵包含G的所有顶点的树，则该子图称为G的生成树<br>生成树是连通图的包含图中的所有顶点的极小连通子图</p>
+<h2 id="最小生成树-1"><a href="#最小生成树-1" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>当图上的边带有权值时，我们将构造这个最小总代价的生成树称为最小生成树</p>
+<h2 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h2><p>​		a. 利用邻接矩阵存储dist[i][j]两点 i 和 j 之间的距离；<br>    b. 用cost[i]来表示 最小生成树集合 和 非最小生成树 中的点 i 的最小距离，当cost[i] &#x3D; 0代表 i 就是 最小生成树 集合中的顶点。<br>    c. 由于是生成树，所以顶点 0 一定在树上，初始化cost[i]就是 0 和 i 的距离（因为 最小生成树集合 目前只有0）。<br>    d. 从cost[i]中寻找一个值不为零（因为值为零表示是最小生成树集合中的点）且最小的顶点u，那么 cost[u]一定是 最小生成树上的边。于是，u也成了 最小生成树上的点。<br>    e. 然后，继续用u去更新cost[i]，即更新 最小生成树集合 和 非最小生成树的点 之间的距离，回到 d 继续迭代计算。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">int minSpanningTree(int n, int dist[maxn][maxn]) &#123;</span><br><span class="line">    int i, u, ret, dis;</span><br><span class="line">    int cost[maxn];                                </span><br><span class="line">    for(i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">        cost[i] = (i == 0) ? 0 : dist[0][i];       // (1)  </span><br><span class="line">    &#125;</span><br><span class="line">    ret = 0;                                       // (2)</span><br><span class="line">    while(1) &#123;</span><br><span class="line">        dis = inf;</span><br><span class="line">        for(i = 0; i &lt; n; ++i) &#123;                   // (3)</span><br><span class="line">            if(cost[i] &amp;&amp; lessthan(cost[i], dis) ) &#123;</span><br><span class="line">                dis = cost[i];</span><br><span class="line">                u = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(dis == inf) &#123;</span><br><span class="line">            return ret;                            // (4)</span><br><span class="line">        &#125;</span><br><span class="line">        ret += cost[u];                            // (5)</span><br><span class="line">        cost[u] = 0;                               // (6)</span><br><span class="line">        for(i = 0; i &lt; n; ++i) &#123;                   // (7)</span><br><span class="line">            if(cost[i] &amp;&amp; lessthan(dist[u][i], cost[i])) &#123;</span><br><span class="line">                cost[i] = dist[u][i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return inf;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>( 1 ) cost[i]表示 当前最小生成树集合 和 当前非最小生成树 中的点 i 的最小距离，当cost[i] &#x3D; 0代表 i 就是 当前最小生成树 集合中的顶点；<br>( 2 )  ret用来存储最小生成树边权之和，初始化为 0；<br>( 3 ) 从cost[i]中寻找一个值不为零（因为值为零表示是最小生成树集合中的点）且最小的顶点u，那么 cost[u]一定是 最小生成树上的边。于是，u也成了 最小生成树上的点；<br>( 4 )  整个查找过程完成，直接返回最小生成树的边权总和；<br>( 5 )  将当前边cost[u]加入最小生成树；<br>( 6 )  将当前点u加入最小生成树；<br>( 7 ) 继续用u去更新cost[i]，即更新 最小生成树集合 和 非最小生成树的点 之间的距离；</p>
+<h2 id="Kruscal算法"><a href="#Kruscal算法" class="headerlink" title="Kruscal算法"></a>Kruscal算法</h2><p>​         采用 并查集 实现，算法描述如下：<br>    a. 将图中所有的边按照三元组  (u,v,w) 来存储。<br>    b. 然后按照第三关键字  w 将所有边进行递增排序；<br>    c. 顺序取边，并且判断当前边 (u,v) 的两个顶点 u 和 v 是否在同一个集合。如果不在，则这条边就是 最小生成树 上的边，权值累加，合并两个点；如果在，则这条边舍去；<br>    d. 反复迭代取边，直到总共取了  n−1 条边，则算法结束。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#define maxn 1010</span><br><span class="line"></span><br><span class="line">int pre[maxn];</span><br><span class="line">void unionfind_init(int n) &#123;             // (1)</span><br><span class="line">    for(int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">        pre[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int unionfind_find(int x) &#123;              // (2)</span><br><span class="line">    return pre[x] == x ? (x) : (pre[x] = unionfind_find(pre[x]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool unionfind_union(int x, int y) &#123;     // (3)</span><br><span class="line">    int px = unionfind_find(x);</span><br><span class="line">    int py = unionfind_find(y);</span><br><span class="line">    if(px == py) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    pre[px] = py;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct KEdge &#123;                            // (4)</span><br><span class="line">    int u, v, w;</span><br><span class="line">&#125;E[maxn * maxn];</span><br><span class="line"></span><br><span class="line">int cmp(const void* a, const void* b) &#123;   // (5)</span><br><span class="line">    struct KEdge *pa = (struct KEdge *)a;</span><br><span class="line">    struct KEdge *pb = (struct KEdge *)b;</span><br><span class="line">    return pa-&gt;w - pb-&gt;w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 点的个数 n，边的个数 m</span><br><span class="line">int Kruscal(int n, int m, struct KEdge* edges) &#123;</span><br><span class="line">    int i, ret = 0;</span><br><span class="line">    int edgeCnt = 0;</span><br><span class="line">    qsort(edges, m, sizeof(struct KEdge), cmp);  // (6)</span><br><span class="line">    unionfind_init(n);                           // (7)</span><br><span class="line">    for(i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        if( unionfind_union( edges[i].u, edges[i].v ) ) &#123;</span><br><span class="line">            ret += edges[i].w;                   // (8)</span><br><span class="line">            if(++edgeCnt == n-1) &#123;               // (9)</span><br><span class="line">                return ret;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（1）并查集的初始化；<br>  ( 2 )  带路径压缩的并查集查找操作；<br>  ( 3 )  并查集的合并操作；<br>  ( 4 )  定义边三元组；<br>  ( 5 )  按照边权从小到大排序的回调函数；<br>  ( 6 )  对所有边进行排序；<br>  ( 7 )  初始化所有结点的并查集信息；<br>  ( 8 )  将当前边加入到最小生成树中；<br>  ( 9 )  如果边数等于n−1 则找到解，直接返回；</p>
+<h1 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h1><h2 id="单源最短路径"><a href="#单源最短路径" class="headerlink" title="单源最短路径"></a>单源最短路径</h2>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98.png" alt=" 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/%E6%94%AF%E4%BB%98%E5%AE%9D.png" alt=" 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/29/html%E8%AF%AD%E6%B3%95/" rel="prev" title="html语法">
+      <i class="fa fa-chevron-left"></i> html语法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">图的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">图的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">3.1.</span> <span class="nav-text">邻接矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="nav-number">3.2.</span> <span class="nav-text">邻接表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">4.</span> <span class="nav-text">图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">4.1.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">4.2.</span> <span class="nav-text">DFS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="nav-number">5.</span> <span class="nav-text">拓扑排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">5.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A0%91"><span class="nav-number">6.1.</span> <span class="nav-text">生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-1"><span class="nav-number">6.2.</span> <span class="nav-text">最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prim%E7%AE%97%E6%B3%95"><span class="nav-number">6.3.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kruscal%E7%AE%97%E6%B3%95"><span class="nav-number">6.4.</span> <span class="nav-text">Kruscal算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="nav-number">7.</span> <span class="nav-text">最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="nav-number">7.1.</span> <span class="nav-text">单源最短路径</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt=""
+      src="https://img1.baidu.com/it/u=1025093357,476301700&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">sakura 最好了</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Wd1335032864" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Wd1335032864" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">13 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
