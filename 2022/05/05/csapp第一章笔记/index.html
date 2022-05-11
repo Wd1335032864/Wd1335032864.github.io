@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="很短很短">
+  <meta name="description" content="对底层的大致了解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="csapp读书笔记-第一章">
 <meta property="og:url" content="http://example.com/2022/05/05/csapp%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="生产队的记事本">
-<meta property="og:description" content="很短很短">
+<meta property="og:description" content="对底层的大致了解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/image/image-20220510210527204.png">
 <meta property="og:image" content="http://example.com/image/image-20220511152826816.png">
@@ -33,8 +33,14 @@
 <meta property="og:image" content="http://example.com/image/image-20220511170526986.png">
 <meta property="og:image" content="http://example.com/image/image-20220511171135660.png">
 <meta property="og:image" content="http://example.com/image/image-20220511173608586.png">
+<meta property="og:image" content="http://example.com/image/image-20220511191319907.png">
+<meta property="og:image" content="http://example.com/image/image-20220511192659490.png">
+<meta property="og:image" content="http://example.com/image/image-20220511192957706.png">
+<meta property="og:image" content="http://example.com/image/image-20220511204232883.png">
+<meta property="og:image" content="http://example.com/image/image-20220511211250193.png">
+<meta property="og:image" content="http://example.com/image/image-20220511215030976.png">
 <meta property="article:published_time" content="2022-05-05T07:51:12.000Z">
-<meta property="article:modified_time" content="2022-05-11T09:36:16.495Z">
+<meta property="article:modified_time" content="2022-05-11T13:51:08.905Z">
 <meta property="article:tag" content="计算机基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/image/image-20220510210527204.png">
@@ -203,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-11 17:36:16" itemprop="dateModified" datetime="2022-05-11T17:36:16+08:00">2022-05-11</time>
+                <time title="修改时间：2022-05-11 21:51:08" itemprop="dateModified" datetime="2022-05-11T21:51:08+08:00">2022-05-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,16 +227,16 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
-            <div class="post-description">很短很短</div>
+            <div class="post-description">对底层的大致了解</div>
 
         </div>
       </header>
@@ -241,24 +247,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h1><p>系统中所有的信息——包括磁盘文件、存储器中额程序、存储器存放的用户数据以及网络上传送的数据，都是一串比特表示的。区分不同数据对象的唯一方法是我们读到这些数据对象时的上下文。<br>不同的上下文中，不同的字节序列可能表示一个整数、浮点数、字符串或者机器指令。<br>数字的机器表示方式  <strong>—&gt;</strong> 第二章</p>
+        <h1 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h1><p>系统中所有的信息——包括磁盘文件、存储器中额程序、存储器存放的用户数据以及网络上传送的数据，都是一串比特表示的。<strong>区分不同数据对象的唯一方法</strong>是我们读到这些数据对象时的上下文。<br>不同的上下文中，不同的字节序列可能表示一个整数、浮点数、字符串或者机器指令。<br>数字的机器表示方式  <strong>—&gt;</strong> 第二章</p>
 <h1 id="源程序到可执行文件的过程"><a href="#源程序到可执行文件的过程" class="headerlink" title="源程序到可执行文件的过程"></a>源程序到可执行文件的过程</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> int main() </span><br><span class="line">&#123; </span><br><span class="line">printf(&quot;hello,world\n&quot;); </span><br><span class="line">return 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上程序是我们通过文本编辑器创建并保存的文本文件，文件名为hello.c（源程序）。源程序实际上就是一个由值<strong>0和1组成的位（又称为比特）序列</strong></p>
 <p><img src="/../image/image-20220510210527204.png" alt="image-20220510210527204"><br>执行四个阶段的程序（预处理器、编译器、汇编器和链接器)一起构成了编译系统</p>
 <ul>
-<li>预处理阶段<br>预处理器根据#开头的命令修改原始的c程序 ，即读取#include&lt; 头文件&gt;中 头文件的内容，并将它直接插入到程序文本中得到新的c程序，通常以.i为文件扩展名</li>
-<li>编译阶段<br>编译器将文本文件hello.i翻译成文本文件hello.s  将c程序翻译成了汇编语言</li>
-<li>汇编阶段<br>汇编器将hello.s翻译成机器语言指令，并把这些指令打包成为一种叫做可重定位目标程序的格式，将结果保存在目标文件hello.o中。hello.o是一个二进制文件，他的字节编码是机器语言指令而不是字符，所以如果在文本编辑器中打开将会呈现一堆乱码。</li>
-<li>链接阶段<br>hello程序调用了printf函数，它是标准c库中的一个函数，每个c编译器都提供。它位于一个名为printf.o的单独的预编译目标文件中，这个文件必须以某种方式并入到hello.o的程序中，链接器就负责这种并入，结果就得到hello文件，是一个可执行目标文件。  可执行文件加载到存储器后有系统负责执行。</li>
+<li><strong>预处理阶段</strong><br>预处理器根据#开头的命令修改原始的c程序 ，即读取#include&lt; 头文件&gt;中 头文件的内容，并将它直接插入到程序文本中得到新的c程序，通常以.i为文件扩展名</li>
+<li><strong>编译阶段</strong><br>编译器将文本文件hello.i翻译成文本文件hello.s  将c程序翻译成了汇编语言</li>
+<li><strong>汇编阶段</strong><br>汇编器将hello.s翻译成机器语言指令，并把这些指令打包成为一种叫做可重定位目标程序的格式，将结果保存在目标文件hello.o中。hello.o是一个二进制文件，他的字节编码是机器语言指令而不是字符，所以如果在文本编辑器中打开将会呈现一堆乱码。</li>
+<li><strong>链接阶段</strong><br>hello程序调用了printf函数，它是标准c库中的一个函数，每个c编译器都提供。它位于一个名为printf.o的单独的预编译目标文件中，这个文件必须以某种方式并入到hello.o的程序中，链接器就负责这种并入，结果就得到hello文件，是一个可执行目标文件。  可执行文件加载到存储器后有系统负责执行。</li>
 </ul>
 <h1 id="了解编译系统如何工作的原因"><a href="#了解编译系统如何工作的原因" class="headerlink" title="了解编译系统如何工作的原因"></a>了解编译系统如何工作的原因</h1><ul>
-<li>优化程序性能</li>
-<li>理解链接时出现的错误</li>
-<li>避免安全漏洞</li>
+<li><strong>优化程序性能</strong></li>
+<li><strong>理解链接时出现的错误</strong></li>
+<li><strong>避免安全漏洞</strong></li>
 </ul>
 <h1 id="处理器读取并解释储存在存储器中的指令"><a href="#处理器读取并解释储存在存储器中的指令" class="headerlink" title="处理器读取并解释储存在存储器中的指令"></a>处理器读取并解释储存在存储器中的指令</h1><p>此时 hello.c源程序已经被编译系统准换成了可执行目标文件hello，并存放在磁盘上。为了在unix系统上运行该可执行文件，我们将它的文件名输入到shell中</p>
-<h2 id="shell是什么"><a href="#shell是什么" class="headerlink" title="shell是什么"></a>shell是什么</h2><p>  shell是一个命令行解释器，它输出一个提示符，等待输入一个命令行，然后执行这个命令。如果该命令行的第一个单词不是一个内置的shell命令，那么 shell就会假设这是个可执行文件的名字，它将加载并运行这个文件。</p>
+<h2 id="shell是什么"><a href="#shell是什么" class="headerlink" title="shell是什么"></a>shell是什么</h2><p>  shell是一个<strong>命令行解释器</strong>，它输出一个提示符，等待输入一个命令行，然后执行这个命令。如果该命令行的第一个单词不是一个内置的shell命令，那么 shell就会假设这是个可执行文件的名字，它将加载并运行这个文件。</p>
 <h2 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h2><p><img src="/../image/image-20220511152826816.png" alt="image-20220511152826816"></p>
 <h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>贯穿整个系统的一组电子管道称为总线，它携带信息字节并负责在各个部件间传递。通常总线被设计成传送定长的字节快，也就是<strong>字</strong>，字中的字节数（字长）是一个基本参数，各个系统不一样。<br>为了方便描述，假设字长为4个字节，总线一次传送一个字。</p>
 <h3 id="I-x2F-0设备"><a href="#I-x2F-0设备" class="headerlink" title="I&#x2F;0设备"></a>I&#x2F;0设备</h3><p>I&#x2F;0设备时系统与外界的联系通道。实例系统包括 键盘、鼠标、显示器和磁盘驱动器。最开始，可执行程序hello就放在磁盘上。<br>每个I&#x2F;O设备都是通过一个控制器或适配器与I&#x2F;O总线连接起来的。控制器和适配器之间的区别在于组成方式。控制器时I&#x2F;O设备本身中或是主板上的芯片组，而适配器是插在主板插槽上的卡。 两者功能都是在I&#x2F;O总线和I&#x2F;O设备之间传递信息。</p>
@@ -269,8 +275,27 @@
 <p>当hello目标文件中的代码和数据被加载到了存储器，处理器就开始执行hello程序的主程序中的机器语言指令。这些指令将“hello,wolrdl\n”串中的字节从存储器中拷贝到寄存器文件，再从寄存器中文件拷贝到显示器上。<br><img src="/../image/image-20220511171135660.png" alt="image-20220511171135660"></p>
 <h1 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h1><p>通过以上的实例我们可以知道，系统会花费大量的时间把信息从一个地方挪到另一地方<br>指令和数据需要多次在寄存器、主存、磁盘之间来回复制，这些复制其实就是开销，减慢了程序工作的速度。这个时候我们就需要<strong>高速缓存存储器</strong>（cache memory）来解决这个问题。</p>
 <p>一个典型的寄存器文件只存储几百字节的信息，与此相反，主存里存放几百万字节。然而，处理器从寄存器文件中读数据比从主存中读取要快很多。而加快处理器的运行速度比加快主存的处理速度要容易和便宜很多</p>
-<p>所以针对这种处理器和主存之间的差异，设计了更小更快的存储设备，成为高速缓存存储，它们被用来作为暂时的集结区域，存放处理器在不久后可能会需要的信息。<br><img src="/../image/image-20220511173608586.png" alt="image-20220511173608586"></p>
-<h1 id="形成层次结构的存储设备"><a href="#形成层次结构的存储设备" class="headerlink" title="形成层次结构的存储设备"></a>形成层次结构的存储设备</h1><h1 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h1><h1 id="利用网络系统和其他系统通信"><a href="#利用网络系统和其他系统通信" class="headerlink" title="利用网络系统和其他系统通信"></a>利用网络系统和其他系统通信</h1>
+<p>所以针对这种处理器和主存之间的差异，设计了更小更快的存储设备，成为高速缓存存储，它们被用来作为暂时的集结区域，存放处理器在不久后可能会需要的信息。<br><img src="/../image/image-20220511173608586.png" alt="image-20220511173608586"><br>位于处理器芯片上的L1高速缓存的容量可以达到数万字节，访问速度几乎和访问寄存器文件一样快。<br>L2高速缓存容量为数十万到数百万字节，通过一条特殊的总线连接到处理器。进程访问L2高速缓存的时间要比访问L1高速缓存的时间长5倍，但是这仍然比访问主存的时间快5~10倍。<br>L1和L2高速缓存是用一种叫做 <strong>静态随机访问存储器（SRAM)</strong> 的硬件技术实现的。</p>
+<h1 id="形成层次结构的存储设备"><a href="#形成层次结构的存储设备" class="headerlink" title="形成层次结构的存储设备"></a>形成层次结构的存储设备</h1><p>实际上，每个计算机系统中的存储设备都被组织成一个存储器层次模型，如图</p>
+<p><img src="/../image/image-20220511191319907.png" alt="image-20220511191319907"><br>这个模型中，从上至下，设备变得更慢、更大，并且每字节的造价也更便宜。<br>存储器分层结构的主要思想是一个层次上的存储器作为下一层次上的存储器的高速缓存。<br>因此，寄存器文件就是L1的高速缓存，L1是L2的高速缓存，L2是L3的高速缓存，L3是主存的高速缓存，而主存又是磁盘的高速缓存。</p>
+<h1 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h1><p>回到hello程序例子，当shell加载和运行hello程序时，当hello程序输出自己信息时，程序没有直接访问键盘、显示器、磁盘或者主存。它们依靠操作系统提供的服务。<br>操作系统是应用程序和硬件之间插入的一层软件。所有应用程序对硬件的操作尝试都必须通过操作系统。</p>
+<p><img src="/../image/image-20220511192659490.png" alt="image-20220511192659490"><br><strong>操作系统有两个基本功能</strong>：（1）防止硬件被失控的应用程序滥用；（2)向应用程序提供简单一致的机制来控制复杂而又通常大不相同的低级硬件设备。<br>操作系统通过下图显示的几个基本的抽象概念来实现这两个功能。<br><img src="/../image/image-20220511192957706.png" alt="image-20220511192957706"></p>
+<ul>
+<li>文件是对I&#x2F;O设备的抽象表示</li>
+<li>虚拟存储器时对主存和磁盘I&#x2F;O设备的抽象表示</li>
+<li>进程是对处理器、主存和I&#x2F;O设备的抽象表示</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程是操作系统对运行程序的一种抽象。在一个系统上可以<strong>同时运行多个进程</strong>，而每个进程都好像在<strong>独占地使用硬件</strong>。而并发运行，则是说一个进程的指令和另个进程的指令是交错执行的。操作系统实现这种交错执行的机制称为<strong>上下文切换</strong>。<br>操作系统保存进程运行所需的当前值。这种状态就是<strong>上下文</strong>。任何时刻，系统上都只有一个进程正在运行。当操作系统决定从当前进程转移到某个新进程时，他就会进行上下文切换，即保存当前进程的上下文、恢复新进程的上下文，然后将控制权转移到新进程，新进程就会从它上次停止的地方开始。<br>如上例shell进程和hello进程<br><img src="/../image/image-20220511204232883.png" alt="image-20220511204232883"><br>实现进程这个抽象概念需要低级硬件和操作系统软件的紧密合作。</p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>现代系统中，一个进程由多个称为<strong>线程</strong>的执行单元组成，<strong>每个线程都运行在进程的上下文中，并共享同样的代码和全局数据</strong>。多线程比多进程更容易共享数据，而且线程间切换所有的开销要远小于进程切换。</p>
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p>虚拟存储器这个抽象概念位每个进程提供了一个假象，好像每个进程都在独占主存。每个进程看到的存储器都是一致的，称之位虚拟地址空间。下图所识时Linux进程的虚拟地址空间。 最上面四分之一的地址空间时预留给<strong>操作系统中的代码和数据</strong>的，对所有进程都一样。剩下四分之三的地址空间用来存放<strong>用户进程定义的代码和数据</strong>。<strong>途中的地址是从下往上增大的</strong>。<br><img src="/../image/image-20220511211250193.png" alt="image-20220511211250193"><br>每个进程看到虚拟地址空间由大量准确定义的区构成，每个区有专门的功能。<br> 程序代码和数据: 存放可执行程序代码和代码中的全局变量。</p>
+<p>  <strong>堆</strong>: 用于动态申请的内存变量，比如malloc函数申请的动态内存空间，可以向上扩展。</p>
+<p>  <strong>共享库</strong>: 用于存放C语言库函数的代码和数据。本例中即printf的代码和数据。</p>
+<p>  <strong>栈</strong>： 位于虚拟地址空间的顶部，用于函数调用、存放局部变量等。当我们调用一个函数时，栈会向下扩展，返回时，向上收缩。</p>
+<p>  <strong>内核虚拟存储器</strong>: 地址空间顶部的区域是为内核保留的。不允许应用程序读写这个区域的内容或者直接调用内核代码定义的函数。相反，它们必须调用内核来执行这些操作。</p>
+<p>虚拟存储器的运作需要硬件和操作系统软件间的互相合作，包括对处理器生成的每个地址的硬件翻译。基本思想是把一个进程虚拟存储器的内容存储在磁盘上，然后用主存作为磁盘的高速缓存。</p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>文件就是字节序列。  每个I&#x2F;O设备，包括磁盘、键盘、显示器，甚至于网络，都可以被看成是文件。系统中所有输入输出都是通过使用称为Unix I&#x2F;O的一组系统函数调用读写文件来实现的<br>文件这个概念很强大，因为它使得应用程序能够统一地看待系统中可能含有的所有I&#x2F;O设备。</p>
+<h1 id="利用网络系统和其他系统通信"><a href="#利用网络系统和其他系统通信" class="headerlink" title="利用网络系统和其他系统通信"></a>利用网络系统和其他系统通信</h1><p>现代系统经常是通过和其他系统连接到一起的。从一个单独的系统来看，网络可被视为I&#x2F;O设备。如图<br><img src="/../image/image-20220511215030976.png" alt="image-20220511215030976"></p>
+
     </div>
 
     
@@ -374,7 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E4%BD%8D-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">信息就是位+上下文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A8%8B%E5%BA%8F%E5%88%B0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">源程序到可执行文件的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">3.</span> <span class="nav-text">了解编译系统如何工作的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AF%BB%E5%8F%96%E5%B9%B6%E8%A7%A3%E9%87%8A%E5%82%A8%E5%AD%98%E5%9C%A8%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">处理器读取并解释储存在存储器中的指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">shell是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90"><span class="nav-number">4.2.</span> <span class="nav-text">系统的硬件组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF"><span class="nav-number">4.2.1.</span> <span class="nav-text">总线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-0%E8%AE%BE%E5%A4%87"><span class="nav-number">4.2.2.</span> <span class="nav-text">I&#x2F;0设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98"><span class="nav-number">4.2.3.</span> <span class="nav-text">主存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">4.2.4.</span> <span class="nav-text">处理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8Chello%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.3.</span> <span class="nav-text">执行hello程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98"><span class="nav-number">5.</span> <span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E6%88%90%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E7%9A%84%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87"><span class="nav-number">6.</span> <span class="nav-text">形成层次结构的存储设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E7%A1%AC%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">操作系统管理硬件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%BD%91%E7%BB%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1"><span class="nav-number">8.</span> <span class="nav-text">利用网络系统和其他系统通信</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E4%BD%8D-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">信息就是位+上下文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A8%8B%E5%BA%8F%E5%88%B0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">源程序到可执行文件的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">3.</span> <span class="nav-text">了解编译系统如何工作的原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AF%BB%E5%8F%96%E5%B9%B6%E8%A7%A3%E9%87%8A%E5%82%A8%E5%AD%98%E5%9C%A8%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">处理器读取并解释储存在存储器中的指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">4.1.</span> <span class="nav-text">shell是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90"><span class="nav-number">4.2.</span> <span class="nav-text">系统的硬件组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF"><span class="nav-number">4.2.1.</span> <span class="nav-text">总线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-0%E8%AE%BE%E5%A4%87"><span class="nav-number">4.2.2.</span> <span class="nav-text">I&#x2F;0设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98"><span class="nav-number">4.2.3.</span> <span class="nav-text">主存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">4.2.4.</span> <span class="nav-text">处理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8Chello%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.3.</span> <span class="nav-text">执行hello程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98"><span class="nav-number">5.</span> <span class="nav-text">高速缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BD%A2%E6%88%90%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E7%9A%84%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87"><span class="nav-number">6.</span> <span class="nav-text">形成层次结构的存储设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E7%A1%AC%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">操作系统管理硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-number">7.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-number">7.2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">7.3.</span> <span class="nav-text">虚拟存储器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">7.4.</span> <span class="nav-text">文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%BD%91%E7%BB%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1"><span class="nav-number">8.</span> <span class="nav-text">利用网络系统和其他系统通信</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,13 +470,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
 
         
