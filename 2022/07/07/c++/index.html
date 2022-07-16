@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="C++ Primer 笔记">
+  <meta name="description" content="C++ Primer 基础篇 笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++">
 <meta property="og:url" content="http://example.com/2022/07/07/c++/index.html">
 <meta property="og:site_name" content="生产队的记事本">
-<meta property="og:description" content="C++ Primer 笔记">
+<meta property="og:description" content="C++ Primer 基础篇 笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/image/image-20220708150542690.png">
 <meta property="og:image" content="http://example.com/image/image-20220708170340900.png">
 <meta property="article:published_time" content="2022-07-07T12:58:37.000Z">
-<meta property="article:modified_time" content="2022-07-16T04:15:52.680Z">
+<meta property="article:modified_time" content="2022-07-16T16:01:13.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/image/image-20220708150542690.png">
 
@@ -306,7 +306,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-16 12:15:52" itemprop="dateModified" datetime="2022-07-16T12:15:52+08:00">2022-07-16</time>
+                <time title="修改时间：2022-07-17 00:01:13" itemprop="dateModified" datetime="2022-07-17T00:01:13+08:00">2022-07-17</time>
               </span>
 
           <br>
@@ -315,16 +315,16 @@ mjx-container[display="true"] + br {
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>23k</span>
+              <span>31k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>21 分钟</span>
+              <span>28 分钟</span>
             </span>
-            <div class="post-description">C++ Primer 笔记</div>
+            <div class="post-description">C++ Primer 基础篇 笔记</div>
 
         </div>
       </header>
@@ -335,9 +335,9 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><h2 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h2><p>C++定义了几种基本内置类型，也提供了自定义数据类型的机制，标准库还定义了一些更加复杂的数据类型。本章主要讲述内置类型。</p>
-<h3 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h3><p>包括算术类型和空类型。算术类型包括字符、整型数、布尔值和浮点数。空类型不对应具体值，用于特定场合，如函数不返回任何值时用空类型作为返回类型。</p>
-<h4 id="算术类型"><a href="#算术类型" class="headerlink" title="算术类型"></a>算术类型</h4><p>算术类型分为整形和浮点型。整形包括字符和布尔类型。</p>
+        <h1 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h1><p>C++定义了几种基本内置类型，也提供了自定义数据类型的机制，标准库还定义了一些更加复杂的数据类型。本章主要讲述内置类型。</p>
+<h2 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h2><p>包括算术类型和空类型。算术类型包括字符、整型数、布尔值和浮点数。空类型不对应具体值，用于特定场合，如函数不返回任何值时用空类型作为返回类型。</p>
+<h3 id="算术类型"><a href="#算术类型" class="headerlink" title="算术类型"></a>算术类型</h3><p>算术类型分为整形和浮点型。整形包括字符和布尔类型。</p>
 <p>算数类型的尺寸在不同机器上有差别，但具有C++标准规定的最小值。</p>
 <table>
 <thead>
@@ -413,7 +413,7 @@ mjx-container[display="true"] + br {
 <p>其他整形的尺寸还有个规定：long long <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g></g></g></svg></mjx-container>long<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g></g></g></svg></mjx-container>int<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g></g></g></svg></mjx-container>short</p>
 <p>浮点数中虽然有规定的最小有效位数，但大多编译器都实现了更高的精度。通常、float用32位表示，有效位为7位、double用64位表示，有效位为16位。long double 常用于有特殊浮点需求的硬件。</p>
 <p>除去布尔型和扩展的字符型外，其他整形还可以划分为带符号的和无符号的。在类型面前加unsigned则是无符号的。注意字符型被分为char、signed char和unsigned char，但表现形式仍是带符号与无符号的，其中char与 signed不同，它可能是带符号也可能是无符号，由编译器决定。</p>
-<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>类型转换是一种大多数类型支持的运算。此处主要是自动类型转换。</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>类型转换是一种大多数类型支持的运算。此处主要是自动类型转换。</p>
 <ul>
 <li>给某种类型对象赋另一类型值时</li>
 </ul>
@@ -434,7 +434,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unsigned u1 = 42, u2 = 10;</span><br><span class="line">cout&lt;&lt;u1-u2&lt;&lt;endl;      //-32取模后的值</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>无符号数在小于零时会得到取模后的值，在循环中要注意，不然会死循环。</p>
-<h4 id="字面值常量"><a href="#字面值常量" class="headerlink" title="字面值常量"></a>字面值常量</h4><p>每个字面值常量对应一种数据类型，字面值常量的形式和值决定了其数据类型。</p>
+<h3 id="字面值常量"><a href="#字面值常量" class="headerlink" title="字面值常量"></a>字面值常量</h3><p>每个字面值常量对应一种数据类型，字面值常量的形式和值决定了其数据类型。</p>
 <ul>
 <li><p>整形和浮点型字面值<br>以0开头的整数代表八进制，以0x或0X开头代表十六进制。默认情况下，十进制字面值都是带符号数，八进制和十六进制字面值可能是无符号也可能是带符号的。十进制字面值类型是int、long和long long中容纳其数值的尺寸最小者。八进制和十六进制字面值类型是int、unsigned int、long、unsigned long、long long和unsigned long long 中能容纳其数值的尺寸最小者。short类型没有对应的字面值常量。严格来说，十进制字面值不会是负数，对于形如-42的负十进制字面值，这个负号并不在字面值内，它的作用只是对字面值取负。</p>
 <p>浮点型字面值表现为一个小数或科学计数法表示的指数，指数用e或E表示。其默认类型为double。</p>
@@ -511,8 +511,8 @@ mjx-container[display="true"] + br {
 <li><p>布尔面值和指针字面值<br>布尔面值就是true和false。<br>nullptr是指针字面值。</p>
 </li>
 </ul>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量提供一个具名的、可操作的存储空间。每个变量都有其数据类型，决定着所占内存空间大小、布局方式和所能参与的运算等等。暂且将对象和变量看作一个概念。</p>
-<h4 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h4><p>基本形式：类型说明符后紧跟着一个或多个变量名组成的列表，以逗号隔开，以分号结尾。定义时可以赋初值。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量提供一个具名的、可操作的存储空间。每个变量都有其数据类型，决定着所占内存空间大小、布局方式和所能参与的运算等等。暂且将对象和变量看作一个概念。</p>
+<h3 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h3><p>基本形式：类型说明符后紧跟着一个或多个变量名组成的列表，以逗号隔开，以分号结尾。定义时可以赋初值。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int sum = 1,value,</span><br><span class="line">     units_sold = 1;     //sum和units_sold初值为0，value还未赋值</span><br></pre></td></tr></table></figure>
 
 <p>当对象在创建时获得了一个特点的值，就说这个对象被初始化了。用于初始化变量的值可以是任意具有数值结果的表达式。当一次定义了两个或多个变量时，对象的名字随着定义也就马上可以使用了，所以可以用先定义的变量值去初始化后定义的变量，如：</p>
@@ -534,7 +534,7 @@ mjx-container[display="true"] + br {
 <p>如果类要求每个对象都显示初始化，那么创建对象而为显示初始化时，将引发错误。</p>
 </li>
 </ul>
-<h4 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h4><p>为了支持分离式编译，C++将声明和定义区分开始。声明让名字被程序所知道，一个文件如果想使用别处定义的名字则必须包含对那个名字的声明。而定义负责创建与名字关联的实体。变量声明规定了变量的类型与名字，定义则还会申请存储空间，也可能会为变量初始化。<br>如果要声明一个变量而非定义，则在变量名前添加关键字extern，并且不要显式初始化变量</p>
+<h3 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h3><p>为了支持分离式编译，C++将声明和定义区分开始。声明让名字被程序所知道，一个文件如果想使用别处定义的名字则必须包含对那个名字的声明。而定义负责创建与名字关联的实体。变量声明规定了变量的类型与名字，定义则还会申请存储空间，也可能会为变量初始化。<br>如果要声明一个变量而非定义，则在变量名前添加关键字extern，并且不要显式初始化变量</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extern int i;       //声明i而非定义i</span><br><span class="line">int j;              //声明并定义j</span><br></pre></td></tr></table></figure>
 
 <p>任何包含实现初始化都为定义</p>
@@ -542,10 +542,10 @@ mjx-container[display="true"] + br {
 
 <p>在函数体内部试图初始化一个由extern关键字标记的变量会引发错误。</p>
 <p>如果要在多个文件中使用同一个变量，则必须将声明和定义分离，变量的定义必须 出现在且只能出现在一个文件中，而其他使用到该变量的而文件必须对其进行声明，绝对不能重复定义。</p>
-<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><p>由字母、数字和下划线组成，且必须以字母或下划线开头。标识符无长度限制，但会区分大小字母。<strong>关键字和操作符替代名</strong>不能被用作标识符。同时，C++为标准库保留了一些名字。所以为了避免冲突，自定义的标识符中不能连续出现两个下划线，也不能以下划线紧连大写字母开头。此外，定义在函数体外的标识符不能以下划线开头。</p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>由字母、数字和下划线组成，且必须以字母或下划线开头。标识符无长度限制，但会区分大小字母。<strong>关键字和操作符替代名</strong>不能被用作标识符。同时，C++为标准库保留了一些名字。所以为了避免冲突，自定义的标识符中不能连续出现两个下划线，也不能以下划线紧连大写字母开头。此外，定义在函数体外的标识符不能以下划线开头。</p>
 <p>变量命名规范可以提高程序的可读性： 具有具体含义、变量名一般用小写、用户自定义的类名一般以大写字母开头、由多个单词组成的标识符中单词间用下划线隔开。</p>
 <p><img src="/../image/image-20220708170340900.png" alt="image-20220708170340900"></p>
-<h4 id="名字的作用域"><a href="#名字的作用域" class="headerlink" title="名字的作用域"></a>名字的作用域</h4><p>不论在程序的什么位置，使用到的每个名字都会指向一个特定的实体：变量、函数、类型等。然而同一个名字如果出现在程序的不同位置，也可能指向的时不同实体。</p>
+<h3 id="名字的作用域"><a href="#名字的作用域" class="headerlink" title="名字的作用域"></a>名字的作用域</h3><p>不论在程序的什么位置，使用到的每个名字都会指向一个特定的实体：变量、函数、类型等。然而同一个名字如果出现在程序的不同位置，也可能指向的时不同实体。</p>
 <p><strong>作用域</strong>是程序的一部分，在其中名字有其特定的含义。作用域以花括号分隔。所以同一个名字在不同的作用域中可以指向不同的实体。名字的有效区始于名字的声明语句，结束于所在的作用域末端。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">	int sum = 0;</span><br><span class="line">	for(int val = 1;val &lt;= 10; ++val)</span><br><span class="line">		sum += val;</span><br><span class="line">		std::cout&lt;&lt;"sum of 1 to 10 inclusive is"&lt;&lt;sum&lt;&lt;std::endl;</span><br><span class="line">		return 0;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
@@ -558,8 +558,8 @@ mjx-container[display="true"] + br {
 <p>上例说明如果函数有可能用到某全局变量，则不宜再定义一个同名的局部变量。</p>
 </li>
 </ul>
-<h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><p>本章介绍两种复合类型：引用和指针。</p>
-<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>引用是为对象起了另一个名字。通过将变量名写成&amp;d的形式来定义引用类型，并需要把引用的对象给&amp;d初始化。</p>
+<h2 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h2><p>本章介绍两种复合类型：引用和指针。</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>引用是为对象起了另一个名字。通过将变量名写成&amp;d的形式来定义引用类型，并需要把引用的对象给&amp;d初始化。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 1024;</span><br><span class="line">int &amp;b = a;     //b指向a，或者说b是a的另一个名字</span><br><span class="line">int &amp;b;			// 错误，引用必须初始化</span><br></pre></td></tr></table></figure>
 
 <p>引用和它的初始值是绑定在一起，而不是将初始值拷贝给引用。初始化完成后，引用和它引用的对象一直绑定在一起，<strong>不能再令引用引用其他对象</strong>，所以引用必须初始化。注意<strong>引用不是对象</strong>，它只是引用对象的别名。定义了一个引用后，对其进行的所有操作都是在其引用对象上进行的，所以给引用赋值就是把值赋给了其引用对象。但由于引用本身不是一个对象，所以<strong>不能定义引用的引用</strong>。</p>
@@ -570,7 +570,7 @@ mjx-container[display="true"] + br {
 
 
 
-<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><p>指针也是指向另外一种类型的复合类型。但是指针本身就是一个对象，允许对指针赋值和拷贝，指针也可以先后指向不同的对象，指针无须在定义时初始化。因为指针是对象，如果没有被初始化，也将拥有一个不确定的值。</p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>指针也是指向另外一种类型的复合类型。但是指针本身就是一个对象，允许对指针赋值和拷贝，指针也可以先后指向不同的对象，指针无须在定义时初始化。因为指针是对象，如果没有被初始化，也将拥有一个不确定的值。</p>
 <p>定义指针类型时将变量名写成*d形式，如果同时定义几个指针变量，每个变量前都必须有*：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int *a,*b,*c,d;     // 定义了3个int型指针和一个整形对象d</span><br><span class="line">int* a,b,c;         // 注意这种仅定义了int型指针a 而bc是int型数</span><br></pre></td></tr></table></figure>
 
@@ -616,7 +616,7 @@ mjx-container[display="true"] + br {
 <p>不能直接操作void*指针指向的对象，因为不知道其对象类型，从而无法确定能在这个对象上进行的操作。总之，以void*视角看内存空间仅仅是内存空间，无法访问内存空间中所存的对象。</p>
 </li>
 </ul>
-<h4 id="理解复合类型的声明"><a href="#理解复合类型的声明" class="headerlink" title="理解复合类型的声明"></a>理解复合类型的声明</h4><p>一条语句中，基本数据类型只有一个，但声明符的形式却可以不同。</p>
+<h3 id="理解复合类型的声明"><a href="#理解复合类型的声明" class="headerlink" title="理解复合类型的声明"></a>理解复合类型的声明</h3><p>一条语句中，基本数据类型只有一个，但声明符的形式却可以不同。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int i = 1024, *p = &amp;i, &amp;r = i; //基本数据类型为int ，定义了int型数、int型指针和int型引用</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -631,7 +631,7 @@ mjx-container[display="true"] + br {
 <li><p>指向指针的引用<br>引用本身不是对象，不能定义指向引用的指针，但指针是对象，所以存在指针的引用。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int i =42;</span><br><span class="line">int *p ;</span><br><span class="line">int *&amp;r = p;   //理解为r是（int*）型的引用，从右向左阅读，离变量名最近的符号对变量影响最直接</span><br><span class="line">r = &amp;i;        //即把p指向i</span><br><span class="line">*r = 0；       //把i值改为0</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="const限定符"><a href="#const限定符" class="headerlink" title="const限定符"></a>const限定符</h3><p>有时需要定义一种变量，它的值不能被改变。通常可以用关键字const对变量的类型就以限定。比如在缓冲区中，为了避免程序不小心修改缓存区的大小，可以使用const来修饰。</p>
+<h2 id="const限定符"><a href="#const限定符" class="headerlink" title="const限定符"></a>const限定符</h2><p>有时需要定义一种变量，它的值不能被改变。通常可以用关键字const对变量的类型就以限定。比如在缓冲区中，为了避免程序不小心修改缓存区的大小，可以使用const来修饰。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int j = 42;</span><br></pre></td></tr></table></figure>
 
 <p>使用const修饰变量后，任何修改变量值的操作都会引发错误。因为const变量创建后就不能再改变其值，与引用一样，必须初始化，初始值也可以是任意复杂的表达式。</p>
@@ -640,7 +640,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//file_1.cc 定义并初始化了一个常量，该常量能被其他文件访问</span><br><span class="line">extern const int bufsize = fcn();</span><br><span class="line">//file_1.h头文件</span><br><span class="line">extern const int bufsize;  //与file_1.cc中定义的bufsize是同一个</span><br></pre></td></tr></table></figure>
 
 <p>定义时加extern表明该常量可以被其他文件使用。声明时加extern表面它的定义在别处出现。</p>
-<h4 id="const的引用"><a href="#const的引用" class="headerlink" title="const的引用"></a>const的引用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const int ci = 1024;</span><br><span class="line">const int &amp;r1 = ci;</span><br></pre></td></tr></table></figure>
+<h3 id="const的引用"><a href="#const的引用" class="headerlink" title="const的引用"></a>const的引用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const int ci = 1024;</span><br><span class="line">const int &amp;r1 = ci;</span><br></pre></td></tr></table></figure>
 
 <p>把引用绑定到const对象上，称之为对常量的引用，与普通引用的区别为，其引用对象不能改变且引用对象的值不能改变。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rl = 42;       //错误，引用对象是常量，不能修改引用对象的值</span><br><span class="line">int &amp;r2 = ci;  //错误，不能用非常量引用来引用一个常量对象</span><br></pre></td></tr></table></figure>
@@ -654,7 +654,7 @@ mjx-container[display="true"] + br {
 <p>总结有：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const int i = 42;</span><br><span class="line">const int &amp;r1 = i;    // 引用的对象和引用对象的值都不能做任何修改</span><br><span class="line"></span><br><span class="line">const int i = 43;</span><br><span class="line">int &amp;r2 = i;          // 错误，不能用非常量引用引用常量，因为这样可以通过引用来修改引用对象的值，这样是不被允许的</span><br><span class="line"></span><br><span class="line">int i = 44;</span><br><span class="line">int &amp;r3 = i;          //正确</span><br><span class="line"></span><br><span class="line">int i = 45;</span><br><span class="line">const int &amp;r4 = 46;   // 常量引用引用非常量对象，不能通过常量引用来修改引用对象，但可以通过其他途径修改     </span><br></pre></td></tr></table></figure>
 
-<h4 id="指针和const"><a href="#指针和const" class="headerlink" title="指针和const"></a>指针和const</h4><p>引用有对常量的引用，指针也有<strong>指向常量的指针</strong>，因为指针是对象，所以还有<strong>常量指针</strong>。<br>指向常量的指针：</p>
+<h3 id="指针和const"><a href="#指针和const" class="headerlink" title="指针和const"></a>指针和const</h3><p>引用有对常量的引用，指针也有<strong>指向常量的指针</strong>，因为指针是对象，所以还有<strong>常量指针</strong>。<br>指向常量的指针：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const double pi = 3.14;</span><br><span class="line">const *p = &amp;pi;                //错误，普通指针不能指向常量</span><br><span class="line">const double *q = &amp;pi;         //此为指向常量的指针</span><br><span class="line">*q = 42;                       //不能修改指向对象的值</span><br></pre></td></tr></table></figure>
 
 <p>同理，指向常量的指针也能指向一个非常量对象</p>
@@ -663,7 +663,7 @@ mjx-container[display="true"] + br {
 <p>常量指针：<br>即指针本身定位常量，常量指针必须初始化，一旦初始化后，存放在指针的地址就不能改变了。把*放在const前表示指针是一个常量。不变的是指针本身的值而非指向的那个值。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a = 0;</span><br><span class="line">int *const b = &amp;a;       //常量指针，b将一直指向a，但a的值可以改变</span><br><span class="line">const int c = 0;</span><br><span class="line">const int *const d = &amp;c; //指向常量的常量指针，此处存放的地址和所指对象的值都不能改变</span><br></pre></td></tr></table></figure>
 
-<h4 id="顶层const"><a href="#顶层const" class="headerlink" title="顶层const"></a>顶层const</h4><p>例如，顶层const表示指针本身是个常量，底层const表示指针所指对象是一个常量。一般化后，顶层const可以表示任意的对象是常量，如算术类型、类、指针等。底层const则与指针和引用等复合类型的基本类型部分有关。因为指针本身是对象，所以指针类型既可以是顶层const也可以是底层const。</p>
+<h3 id="顶层const"><a href="#顶层const" class="headerlink" title="顶层const"></a>顶层const</h3><p>例如，顶层const表示指针本身是个常量，底层const表示指针所指对象是一个常量。一般化后，顶层const可以表示任意的对象是常量，如算术类型、类、指针等。底层const则与指针和引用等复合类型的基本类型部分有关。因为指针本身是对象，所以指针类型既可以是顶层const也可以是底层const。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int i =0;</span><br><span class="line">int *const p1 = &amp;i;    //顶层const，指针常量，不能修改p1的值</span><br><span class="line">const int c1 = 42;     //顶层const，整型常量，不能修改c1的值</span><br><span class="line">const int *p2 = &amp;c1;   //底层const，指向常量的指针，不能通过p2修改c1的值，可以改变p2的值</span><br><span class="line">const int &amp;r = ci;     //声明引用的都是底层const</span><br></pre></td></tr></table></figure>
 
 <p>当进行对象的拷贝操作时，顶层const没什么影响，因为顶层const只表示该对象为常量</p>
@@ -672,7 +672,7 @@ mjx-container[display="true"] + br {
 <p>当是底层const时，就会有影响。比如，把指向常量的指针的值赋给普通指针，这样就可以通过指针来修改所指对象的值，而所指对象是常量，这样就产生矛盾。引用也是一样。但一般来说，非常量可以转换成常量。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int a =42;</span><br><span class="line">const int b = 43;</span><br><span class="line">const int *p;</span><br><span class="line">int *q；</span><br><span class="line">p = &amp;a;         //int*可以转换成const int*</span><br><span class="line">q = &amp;b;         //错误，const int* 不能转换成int* </span><br></pre></td></tr></table></figure>
 
-<h4 id="constexpr和常量表达式"><a href="#constexpr和常量表达式" class="headerlink" title="constexpr和常量表达式"></a>constexpr和常量表达式</h4><p>常量表达式是指值不会改变并且在编译过程中就能得到计算结果的表达式。显然，字面值属于常量表达式，用常量表达式初始化的const对象也是常量表达式。</p>
+<h3 id="constexpr和常量表达式"><a href="#constexpr和常量表达式" class="headerlink" title="constexpr和常量表达式"></a>constexpr和常量表达式</h3><p>常量表达式是指值不会改变并且在编译过程中就能得到计算结果的表达式。显然，字面值属于常量表达式，用常量表达式初始化的const对象也是常量表达式。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const int a = 20;       //20和a都是常量表达式</span><br><span class="line">const int b = a + 1;    //b也是常量表达式</span><br><span class="line">int c = 1;              //c不是</span><br><span class="line">const d = get_size();   //d不能在编译过程得到结果，在运行过程中才能得到，不是常量表达式</span><br></pre></td></tr></table></figure>
 
 <p>在一个复杂系统中，很难分辨出一个初始值是不是常量表达式。尽管可以定义一个const变量并把它的初始值设为我们认为的某个常量表达式，但是实际可能初始值并非常量表达式的情况。所以C++新标准允许将变量声明为<strong>constexpr</strong>类型以便来验证变量的值是否是一个常量表达式，声明为<strong>constexpr</strong>的变量一定是一个变量，且必须用常量表达式初始化。</p>
@@ -687,7 +687,7 @@ mjx-container[display="true"] + br {
 
 
 
-<h3 id="处理类型"><a href="#处理类型" class="headerlink" title="处理类型"></a>处理类型</h3><h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><p>它是某种类型的同义词，可以让复杂的类型名字变得简单，易于使用。有两种方法定义类型别名：<br><strong>关键字typedef</strong></p>
+<h2 id="处理类型"><a href="#处理类型" class="headerlink" title="处理类型"></a>处理类型</h2><h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><p>它是某种类型的同义词，可以让复杂的类型名字变得简单，易于使用。有两种方法定义类型别名：<br><strong>关键字typedef</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef double wages;   //wages是double的同义词</span><br><span class="line">typedef wages base, *p; //base是double的同义词，p是double*的同义词</span><br></pre></td></tr></table></figure>
 
 <p>可以通过别名再来定义别名，且声明符可以包含类型修饰，从而也能由基本数据类型构造出符合类型，如上的*p指针。</p>
@@ -705,7 +705,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const char *cstr = 0; // const修饰的是char ，指向常量的指针</span><br><span class="line">const pstring cstr ;  // const修饰的是pstring即char* ，是常量指针</span><br></pre></td></tr></table></figure>
 
 <p>其实就是用pstirng时，基本数据类型是char* 指针，而用char*重写语句时，基本数据类型是char， *成为了声明符的一部分。</p>
-<h4 id="auto类型说明符"><a href="#auto类型说明符" class="headerlink" title="auto类型说明符"></a>auto类型说明符</h4><p>当把表达式给变量赋值时，这就要求声明变量时我们必须清楚表达式的类型，但有时候很难做到。所以C++11引入了<strong>auto</strong>类型说明符，让编译器去分析表达式的类型，与之前的特定类型的说明符（int、double）不同，auto让编译器通过初始值来推算变量的类型。显然auto定义的变量必须有初始值。</p>
+<h3 id="auto类型说明符"><a href="#auto类型说明符" class="headerlink" title="auto类型说明符"></a>auto类型说明符</h3><p>当把表达式给变量赋值时，这就要求声明变量时我们必须清楚表达式的类型，但有时候很难做到。所以C++11引入了<strong>auto</strong>类型说明符，让编译器去分析表达式的类型，与之前的特定类型的说明符（int、double）不同，auto让编译器通过初始值来推算变量的类型。显然auto定义的变量必须有初始值。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto item =val1 + val2;    //item的类型就是编译器分析出val1+val2结果的类型</span><br></pre></td></tr></table></figure>
 
 <p>如果val1+val2类型是int，item类型就是int，val1+val2类型是double，item类型就是double，一切看编译器分析的结果。</p>
@@ -728,7 +728,7 @@ mjx-container[display="true"] + br {
 <p>一条语句定义多个变量时，注意*和&amp;只属于某个声明符，而非基本数据类型的一部分，所以初始值必须是同一基本类型（int和const int 不是同一基本类型）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto k = ci, &amp;l = i;    //k是整数，l是整形指针</span><br><span class="line">auto &amp;n = i, *p2 = &amp;ci; //i是整形，而ci是整形常量，所以错误</span><br></pre></td></tr></table></figure>
 
-<h4 id="decltype类型说明符"><a href="#decltype类型说明符" class="headerlink" title="decltype类型说明符"></a>decltype类型说明符</h4><p>有时候希望从表达式的类型推断出定义的变量的类型却不用该表达式的值来初始化变量。为了满足该要求，引入了第二种类型说明符<strong>decltype</strong>，它的作用是<strong>选择并返回操作数的数据类型</strong>。这个过程中，编译器分析表达式并得到他的类型，但不计算表达式的值：</p>
+<h3 id="decltype类型说明符"><a href="#decltype类型说明符" class="headerlink" title="decltype类型说明符"></a>decltype类型说明符</h3><p>有时候希望从表达式的类型推断出定义的变量的类型却不用该表达式的值来初始化变量。为了满足该要求，引入了第二种类型说明符<strong>decltype</strong>，它的作用是<strong>选择并返回操作数的数据类型</strong>。这个过程中，编译器分析表达式并得到他的类型，但不计算表达式的值：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decltype(f()) sum = x;   //sum的类型就是函数f的返回类型</span><br></pre></td></tr></table></figure>
 
 <p>编译器不会调用函数f，而是使用当调用发生时f的返回值类型作为sum的类型。</p>
@@ -743,25 +743,25 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">decltype(*p) c;        //如果表达式是解引用操作，则decltype将得到引用类型</span><br><span class="line">decltype((i)) d;	   //如果给变量加上一层或多层括号，也会得到引用类型</span><br><span class="line">decltype(i) e;         // 就是一个int类型</span><br></pre></td></tr></table></figure>
 
 <p><strong>decltype((variable)) 的结果永远是引用</strong></p>
-<h3 id="自定义数据结构"><a href="#自定义数据结构" class="headerlink" title="自定义数据结构"></a>自定义数据结构</h3><p>C++允许用户以类的形式自定义数据类，像库类型string、iostream都是以类的形式定义的。此处放到后面详细介绍类再写，这里只介绍编写头文件。</p>
-<h4 id="编写头文件"><a href="#编写头文件" class="headerlink" title="编写头文件"></a>编写头文件</h4><p>为了确保各个文件类中的定义一致，类通常被定义再头文件中，而且类所在的头文件的名字应与类的名字一样。如：string在名为string的头文件中定义，我们也应该把Sale_data类定义在名为Sale_data.h的头文件中。头文件通常包含那些只能被定义一次的实体，如类、const和constexpr常量等。头文件也经常用到其他头文件的功能，如：Sale_data.h头文件必须包含string.h头文件。所以Sale_data类的程序先是直接包含string.h头文件，另外还会随着包含Sale_data.h隐式包含string.h。所以要做适当处理，使其遇到多次包含的情况也能正常工作。</p>
+<h2 id="自定义数据结构"><a href="#自定义数据结构" class="headerlink" title="自定义数据结构"></a>自定义数据结构</h2><p>C++允许用户以类的形式自定义数据类，像库类型string、iostream都是以类的形式定义的。此处放到后面详细介绍类再写，这里只介绍编写头文件。</p>
+<h3 id="编写头文件"><a href="#编写头文件" class="headerlink" title="编写头文件"></a>编写头文件</h3><p>为了确保各个文件类中的定义一致，类通常被定义再头文件中，而且类所在的头文件的名字应与类的名字一样。如：string在名为string的头文件中定义，我们也应该把Sale_data类定义在名为Sale_data.h的头文件中。头文件通常包含那些只能被定义一次的实体，如类、const和constexpr常量等。头文件也经常用到其他头文件的功能，如：Sale_data.h头文件必须包含string.h头文件。所以Sale_data类的程序先是直接包含string.h头文件，另外还会随着包含Sale_data.h隐式包含string.h。所以要做适当处理，使其遇到多次包含的情况也能正常工作。</p>
 <p><strong>预处理器</strong>：<br>确保头文件多次包含仍能安全工作的常用技术是预处理器。预处理器是在编译之前执行的一段程序，可以部分的改变我们所写的程序。像#include，当预处理器看到#include标记就会用指定的头文件的内容代替#include。</p>
 <p>还有一种预处理功能是<strong>头文件保护符</strong>，其依赖于预处理变量（预处理器变量在头文件中定义，当用到预处理器变量时，预处理器将他替换成实际值）。预处理器变量有两种状态：已定义和未定义。**#define<strong>指令把一个名字设定为预处理变量。另外两个指令检查某个指定的预处理变量是否已经定义：</strong>#ifdef** 当且仅当变量已定义时为真，**#ifndef** 当且仅当变量未定义时为真。一旦检查为真，则执行后续操作直到遇到**#endif**指令为止。</p>
 <p>这样就能有效防止重复包含发生：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#ifndef SALES_DATA_H</span><br><span class="line">#define SALES_DATA_H</span><br><span class="line">#include&lt;stirng&gt;</span><br><span class="line">struct Sales_data {</span><br><span class="line">	std::string bookNo;</span><br><span class="line">	unsigned units_sold = 0;</span><br><span class="line">	double revenue = 0.0;</span><br><span class="line">};</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
 <p>第一次包含sales_data.h时，#ifndef检查结果为真，全部执行。第二次包含sales_data.h时，#ifndef检查结果为假，编译器会忽略#ifndef到#endif中的内容，就不会在重复定义Sales_data类，可以正常工作。</p>
-<h2 id="string、vector和数组"><a href="#string、vector和数组" class="headerlink" title="string、vector和数组"></a>string、vector和数组</h2><p>除前面介绍的内置类型外，C++还定义了抽象数据类型库，其中string和vector是两种最重要的标准库类型。还有一种标准库类型是迭代器，它是string和vector的配套类型，常被用于访问string中的字符和vector中的元素。</p>
+<h1 id="string、vector和数组"><a href="#string、vector和数组" class="headerlink" title="string、vector和数组"></a>string、vector和数组</h1><p>除前面介绍的内置类型外，C++还定义了抽象数据类型库，其中string和vector是两种最重要的标准库类型。还有一种标准库类型是迭代器，它是string和vector的配套类型，常被用于访问string中的字符和vector中的元素。</p>
 <p>内置数组是一种更基础的类型。本章主要介绍数组和标准库类型string和vector。</p>
-<h3 id="命名空间的using声明"><a href="#命名空间的using声明" class="headerlink" title="命名空间的using声明"></a>命名空间的using声明</h3><p>目前用到的库函数基本都属于命名空间std。**作用域操作符::**的含义是编译器应从操作符左侧名字所示的作用域中寻找右侧那个名字。所以有std::cin。为了避免繁琐，可以使用using声明，此处介绍的是对每个名字进行using声明。</p>
+<h2 id="命名空间的using声明"><a href="#命名空间的using声明" class="headerlink" title="命名空间的using声明"></a>命名空间的using声明</h2><p>目前用到的库函数基本都属于命名空间std。**作用域操作符::**的含义是编译器应从操作符左侧名字所示的作用域中寻找右侧那个名字。所以有std::cin。为了避免繁琐，可以使用using声明，此处介绍的是对每个名字进行using声明。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using std::cin;   //using声明</span><br><span class="line">//如果声明cout则 using std::cout  </span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">int i;</span><br><span class="line">cin&gt;&gt;i;    //可以直接使用cin，但是由于没有声明cout，所以还是需要写std::cout</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
 <p>即<strong>每个名字都需要独立的using声明</strong>。</p>
 <p><strong>头文件中不应包含using声明</strong>，因为当其他文件包含该头文件时，就会有这个using声明，可能会引起变量名字等冲突。</p>
-<h3 id="标准库类型string"><a href="#标准库类型string" class="headerlink" title="标准库类型string"></a>标准库类型string</h3><p>标准库类型string表示可变长的字符序列，使用string类型必须首先包含string头文件。作为标准库的一部分，string定义在命名空间std中，所以假定以下代码都包含：</p>
+<h2 id="标准库类型string"><a href="#标准库类型string" class="headerlink" title="标准库类型string"></a>标准库类型string</h2><p>标准库类型string表示可变长的字符序列，使用string类型必须首先包含string头文件。作为标准库的一部分，string定义在命名空间std中，所以假定以下代码都包含：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;string&gt;</span><br><span class="line">using std::string;</span><br></pre></td></tr></table></figure>
 
-<h4 id="定义和初始化string对象"><a href="#定义和初始化string对象" class="headerlink" title="定义和初始化string对象"></a>定义和初始化string对象</h4><p>如何初始化类的对象由类本身决定。一个类可以定义很多初始化对象的方式：初始值数量不同，初始值类型不同。具体解释在后面类的章节中。对此处初始化string：</p>
+<h3 id="定义和初始化string对象"><a href="#定义和初始化string对象" class="headerlink" title="定义和初始化string对象"></a>定义和初始化string对象</h3><p>如何初始化类的对象由类本身决定。一个类可以定义很多初始化对象的方式：初始值数量不同，初始值类型不同。具体解释在后面类的章节中。对此处初始化string：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s1;           //默认初始化，s1是空串</span><br><span class="line">string s2(s1);</span><br><span class="line">string s2 = s1;      //s2是s1的副本</span><br><span class="line">string s3("hiya")</span><br><span class="line">string s3 = "hiya";  //s3是该字符串字面值的副本,除了字面值最后的那个空字符外</span><br><span class="line">string s4(10,'c');   //s4由10个字符c组成</span><br></pre></td></tr></table></figure>
 
 <p><strong>直接初始化和拷贝初始化</strong><br>使用等号“=”就是拷贝初始化，不使用就是直接初始化。当初始值只有一个时，两者无区别。如果初始化要用到的值有多个，如上s4要用到10个c，一般来说只能使用直接初始化，也可以通过创建临时对象来用于拷贝。</p>
@@ -769,7 +769,7 @@ mjx-container[display="true"] + br {
 
 
 
-<h4 id="string对象上的操作"><a href="#string对象上的操作" class="headerlink" title="string对象上的操作"></a>string对象上的操作</h4><p>string大多数操作：</p>
+<h3 id="string对象上的操作"><a href="#string对象上的操作" class="headerlink" title="string对象上的操作"></a>string对象上的操作</h3><p>string大多数操作：</p>
 <table>
 <thead>
 <tr>
@@ -859,7 +859,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string s4 = s1 + ",";</span><br><span class="line">string s5 = "hello" + ",";    //错误</span><br><span class="line">string s6 = s1 + "," +"world"; //这里实际上是(s1+",")+"world",s1+","是string对象，所以正确</span><br><span class="line">string s7 = "hello" + "," +s2;   //错误 实际为("hello"+",")+s2</span><br></pre></td></tr></table></figure>
 
 <p>连续加法时注意运算顺序从而确定是否仍为string对象。</p>
-<h4 id="处理string对象中的字符"><a href="#处理string对象中的字符" class="headerlink" title="处理string对象中的字符"></a>处理string对象中的字符</h4><p>关键问题是如何获取字符本身和改变某个字符的特性。 cctype头文件中定义了一组标准库函数处理这部分工作。</p>
+<h3 id="处理string对象中的字符"><a href="#处理string对象中的字符" class="headerlink" title="处理string对象中的字符"></a>处理string对象中的字符</h3><p>关键问题是如何获取字符本身和改变某个字符的特性。 cctype头文件中定义了一组标准库函数处理这部分工作。</p>
 <table>
 <thead>
 <tr>
@@ -936,14 +936,14 @@ mjx-container[display="true"] + br {
 <p>下标的值称为下标或索引。任何表达式只要它的值是一个整形值就能作为索引。如果索引是带符号类型将自动转换成string::size_type类型。在访问指定字符前，要先检查字符串是否为空，如果字符串为空，s[ ]的结果将会是未定义的。</p>
 <p>只要字符串不是常量，就能通过下标运算符返回的字符赋新值。</p>
 <p><strong>使用下标执行迭代（for循环），使用下标执行随机访问（注意写入下标范围）。</strong></p>
-<h3 id="标准库类型vector"><a href="#标准库类型vector" class="headerlink" title="标准库类型vector"></a>标准库类型vector</h3><p>标准库类型vector表示对象的集合，其中所有对象的类型都相同。每个对象都有一个与之对应的索引，索引用于访问对象。vector也被称为容器。同样，使用vector要包含头文件<code>#include&lt;vector&gt;</code></p>
+<h2 id="标准库类型vector"><a href="#标准库类型vector" class="headerlink" title="标准库类型vector"></a>标准库类型vector</h2><p>标准库类型vector表示对象的集合，其中所有对象的类型都相同。每个对象都有一个与之对应的索引，索引用于访问对象。vector也被称为容器。同样，使用vector要包含头文件<code>#include&lt;vector&gt;</code></p>
 <p>C++既有类模板也有函数模板，其中vector就是一个类模板。模板本身不是类或函数，相反可以将模板看作为编译器生成类或函数编写的一份说明。编译器根据模板创建类或函数的过程称为<strong>实例化</strong>。当使用模板时，需要指出编译器应把类或函数实例化成何种类型。</p>
 <p>对于类模板，需要提供一些信息来指定模板到底实例化成什么样的类（存放的数据类型）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; ivec; </span><br><span class="line">vector&lt;vector&lt;string&gt;&gt; file;       //注意格式</span><br></pre></td></tr></table></figure>
 
 <p>vector是模板不是类型，vector<int>才算类型，string也是类型。</int></p>
 <p>因为引用不是对象，所以不存在包含引用的vector。然后在定义多层vector时，早期定义的形式是<code>vector&lt;vector&lt;string&gt; &gt;</code>，即外层vector对象的右尖括号和其他元素类型之间添加一个空格。某些编译器需要以这种老式的声明语句来定义。</p>
-<h4 id="定义和初始化vector对象"><a href="#定义和初始化vector对象" class="headerlink" title="定义和初始化vector对象"></a>定义和初始化vector对象</h4><p><strong>默认初始化vector对象</strong>，从而创建一个指定类型的空vector：</p>
+<h3 id="定义和初始化vector对象"><a href="#定义和初始化vector对象" class="headerlink" title="定义和初始化vector对象"></a>定义和初始化vector对象</h3><p><strong>默认初始化vector对象</strong>，从而创建一个指定类型的空vector：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string&gt; svec;   //默认初始化，vector不含任何元素</span><br></pre></td></tr></table></figure>
 
 <p>也可以定义vector对象时指定元素的初始值，如拷贝：</p>
@@ -968,11 +968,11 @@ mjx-container[display="true"] + br {
 
 
 
-<h4 id="向vector对象中添加元素"><a href="#向vector对象中添加元素" class="headerlink" title="向vector对象中添加元素"></a>向vector对象中添加元素</h4><p>如果想创建一个vector对象令其包含从0到9共10个元素，使用列表初始化的方法可以，但如果是0到999，列表初始化就会很麻烦，更好的处理方式是先创建一个空vector，然后运行时再利用vector成员函数<strong>push_back</strong>迭代地向其中添加元素。它负责把一个值当作vector对象的尾元素压到vector对象的尾端。</p>
+<h3 id="向vector对象中添加元素"><a href="#向vector对象中添加元素" class="headerlink" title="向vector对象中添加元素"></a>向vector对象中添加元素</h3><p>如果想创建一个vector对象令其包含从0到9共10个元素，使用列表初始化的方法可以，但如果是0到999，列表初始化就会很麻烦，更好的处理方式是先创建一个空vector，然后运行时再利用vector成员函数<strong>push_back</strong>迭代地向其中添加元素。它负责把一个值当作vector对象的尾元素压到vector对象的尾端。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; v2;</span><br><span class="line">for(int i = 0;i != 100;++i)</span><br><span class="line">		v2.push_back(i);</span><br></pre></td></tr></table></figure>
 
 <p>因为向vector对象添加元素会改变vector的大小，所以要注意循环是否始终正确。范围for语句体内不应改变其遍历序列的大小，所以不能改变vector大小。</p>
-<h4 id="其他vector操作"><a href="#其他vector操作" class="headerlink" title="其他vector操作"></a>其他vector操作</h4><p>大致与string类型一致。</p>
+<h3 id="其他vector操作"><a href="#其他vector操作" class="headerlink" title="其他vector操作"></a>其他vector操作</h3><p>大致与string类型一致。</p>
 <table>
 <thead>
 <tr>
@@ -1025,8 +1025,8 @@ mjx-container[display="true"] + br {
 <p>相等性运算符和关系运算符也与string的相应运算符功能一致。注意只有当元素的值可比较时，vector对象才能被比较。如如果Sales_item类支持的运算没有相等性判断和关系运算等，那么就不能比较两个vector<sale_item>对象。</sale_item></p>
 <p>下标运算符基本与string使用一致，注意下标的类型是相应的size_type类型。</p>
 <p>然后<strong>不能以下标形式添加元素</strong>。vector对象的下标运算符只能用于访问已存在的元素，用来添加元素则会引起错误。所以只能用push_back来添加元素。</p>
-<h3 id="迭代器介绍"><a href="#迭代器介绍" class="headerlink" title="迭代器介绍"></a>迭代器介绍</h3><p>之前提过除了下标运算符，还能用迭代器来访问string或vector对象的元素。所有标准库容器都可以使用迭代器，但只有少数几种支持下标运算符。类似于指针，迭代器也提供了对对象的间接访问。使用迭代器可以访问某个元素，迭代器也能从一个元素移动到另外一个元素。<strong>有效的迭代器指向某个元素或者指向容器中尾元素的下一个位置</strong>，其他所有情况都属于无效。</p>
-<h4 id="使用迭代器"><a href="#使用迭代器" class="headerlink" title="使用迭代器"></a>使用迭代器</h4><p>有迭代器的类型会同时拥有返回迭代器的成员。比如这些类型拥有begin和end成员。begin成员负责返回指向第一个元素的迭代器，end成员负责返回<strong>指向容器尾元素的下一位置</strong>的迭代器。end成员返回的迭代器也常被称为尾后迭代器。如果容器为空，则begin和end返回同一迭代器，都是尾后迭代器。</p>
+<h2 id="迭代器介绍"><a href="#迭代器介绍" class="headerlink" title="迭代器介绍"></a>迭代器介绍</h2><p>之前提过除了下标运算符，还能用迭代器来访问string或vector对象的元素。所有标准库容器都可以使用迭代器，但只有少数几种支持下标运算符。类似于指针，迭代器也提供了对对象的间接访问。使用迭代器可以访问某个元素，迭代器也能从一个元素移动到另外一个元素。<strong>有效的迭代器指向某个元素或者指向容器中尾元素的下一个位置</strong>，其他所有情况都属于无效。</p>
+<h3 id="使用迭代器"><a href="#使用迭代器" class="headerlink" title="使用迭代器"></a>使用迭代器</h3><p>有迭代器的类型会同时拥有返回迭代器的成员。比如这些类型拥有begin和end成员。begin成员负责返回指向第一个元素的迭代器，end成员负责返回<strong>指向容器尾元素的下一位置</strong>的迭代器。end成员返回的迭代器也常被称为尾后迭代器。如果容器为空，则begin和end返回同一迭代器，都是尾后迭代器。</p>
 <p>一般情况，并不清楚迭代器的精准类型，所以通常用auto来定义变量：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto b = v.begin();</span><br><span class="line">auto e = v.end();</span><br></pre></td></tr></table></figure>
 
@@ -1063,10 +1063,179 @@ mjx-container[display="true"] + br {
 <td align="center">判断两个迭代器是否不相等</td>
 </tr>
 </tbody></table>
-<p>和指针类似，也能通过解引用迭代器获取它所指示的元素，但是必须是合法得指向某个元素的迭代器。</p>
+<p>和指针类似，也能通过解引用迭代器获取它所指示的元素，但是<strong>必须是合法得指向某个元素的迭代器</strong>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string s("some string");</span><br><span class="line">if(s.begin()!=s.end()){    //确保s非空</span><br><span class="line">	auto it = s.begin();</span><br><span class="line">	*it = toupper(*it);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
+<p>++和–实现将迭代器<strong>从一个元素移动到另外一个元素</strong>。因为end返回的迭代器指向尾元素的后一位置，所以不能对其进行递增或解引用操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(auto it = s.begin();it != s.end() &amp;&amp; !isspace(*it);++it)</span><br><span class="line">	*it = toupper(*it); </span><br></pre></td></tr></table></figure>
 
+<p>我们也不太清楚迭代器的精确类型，当然也无须知道，通常拥有迭代器的标准库类型使用iterator和const_iterator来表示迭代器的类型：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt;::iterator it;</span><br><span class="line">string::iterator it2;          //要表明是谁的迭代器</span><br><span class="line">vector&lt;int&gt;::const_iterator it3;</span><br><span class="line">string ::const_iterator it4;    //  只可读元素，不可写元素</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>begin和end运算符</strong>，其返回类型由对象是否是常量决定，如果对象是常量则返回const_iterator，否则返回iterator：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; v;</span><br><span class="line">cosnt vector&lt;int&gt; cv;    //注意const位置</span><br><span class="line">auto it1 = v.begin();</span><br><span class="line">auto it2 = cv. begin();</span><br></pre></td></tr></table></figure>
+
+<p>6.2.3节可以看到，如果对象只需读操作而无须写操作的话最好使用常量类型，为了专门得到const_iterator类型的返回值，引入了两个新函数：cbegin和cend，无论vector对象是否为常量，返回值都是const_iterator：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto it3 = v.cbegin(); //it3的类型是vector&lt;int&gt;::const_iterator</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>结合解引用和成员访问操作</strong>，如果对象的类型是类，对其迭代器解引用后得到迭代器指向的对象，还可以进一步访问他的成员。如一个由字符串组成的vector对象，令it是该对象的迭代器，若检查it所指字符串是否为空，则：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(*it).empty();</span><br><span class="line">*it.empty();    //这样会先访问it的成员函数empty()，再解引用，显然错误</span><br><span class="line">it→empty();    //与第一行意思一致，为了方便定义了箭头运算符→，</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>某些对vector对象的操作会使迭代器失效</strong>，任何一种可能改变vector对象容量的操作，如push_back都会使该vector对象的迭代器失效。9.3.6详细介绍。</p>
+<h3 id="迭代器运算"><a href="#迭代器运算" class="headerlink" title="迭代器运算"></a>迭代器运算</h3><p>前面有递增递减运算符让迭代器每次移动一个元素。其实有更多运算符，可以让迭代器每次移动跨过多个元素，也支持迭代器的关系运算。所以这些运算被称为<strong>迭代器运算</strong>。</p>
+<p>可以令迭代器和一个整数值相加(相减)，其返回值是向前(或向后)移动了若干个位置的迭代器，注意结果迭代器要有效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto mid = vi.begin() + vi.size()/2;</span><br></pre></td></tr></table></figure>
+
+<p>如果vi有20个元素，则迭代器指向vi[10]。</p>
+<p>若比较两个迭代器则两个迭代器<strong>必须合法而且指向同一个容器的元素或尾元素下一位置</strong>。若某迭代器指向的容器位置在另一个迭代器所指向位置之前，则说前者小于后者。</p>
+<p>若两个迭代器可以比较，就也能相减，所得结果是两个迭代器的距离。即右侧迭代器向前移动多少位置就能追上左侧的迭代器，其类型名为<strong>difference_type</strong>的带符号整型数（因为其可正可负）。</p>
+<p>同样迭代器也可以使用加减法的复合赋值来运算。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是一种类似vector的数据结构。<strong>数组的大小确定不变，不能随意向数组中添加元素</strong>。缺乏灵活性。</p>
+<h3 id="定义和初始化内置数组"><a href="#定义和初始化内置数组" class="headerlink" title="定义和初始化内置数组"></a>定义和初始化内置数组</h3><p>数组声明形式为a[d]，a为数组名，d为维度，即数组中元素个数。数组中元素个数也属于数组类型的一部分，编译时应该是已知的。所以d必须是一个常量表达式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">unsigned cnt = 42;            //非常量表达式，不能当作d</span><br><span class="line">constexpr unsigned sz = 42;   //常量表达式</span><br><span class="line">int arr[10];</span><br><span class="line">int *parr[sz]; </span><br><span class="line">string bad[cnt];              //cnt不是常量表达式</span><br><span class="line">string strs[get_size()];      //当get_size()是constexpr时正确，否则错误</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，数组元素会被默认初始化。但是和内置类型的变量一样，如果在函数内部定义了某种内置类型的数组，那么默认初始化会令数组含有未定义的值。</p>
+<p>定义数组的时候<strong>必须指定数组的类型，不允许使用auto关键字来推断类型</strong>。同样数组的元素应为对象，不存在引用的数组。</p>
+<p><strong>显式初始化数组元素</strong>，可以对数组元素进行列表初始化。如果声明时没有指明维度，编译器会根据初始值的数量计算并推算出来。如果指明了维度，那么初始值的总数量不应该超过指定的大小。如果维度比提供的初始值数量大，则初始值按顺序初始化考前的元素，剩下的元素默认初始化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const unsigned sz = 3;</span><br><span class="line">int ial[sz] = {0,1,2};        //维度为3</span><br><span class="line">int a2[] = {0,1,2};           //维度为3，与上式等价</span><br><span class="line">int a3[5] = {0,1,2};          // 等价于a3[] = {0,1,2,0,0};</span><br><span class="line">string a4[3] = {"hi","bye"};  // 等价于a4[] = {"hi","bye",""};</span><br><span class="line">int a5[2] = {0,1,2};    //错误</span><br></pre></td></tr></table></figure>
+
+<p><strong>字符数组有特殊性</strong>，有一种额外的初始化形式，可以用字符串字面值对此类数组初始化。需要注意字符串字面值的结尾有一个空字符，这个空字符也会被拷贝到字符数组中去：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char a1[] = {'C','+','+'};</span><br><span class="line">char a2[] = {'C','+','+','\0'};</span><br><span class="line">char a3[] = "C++";       //自动添加表示字符串结束的空字符</span><br><span class="line">const char a4[6] = "Daniel";  //错误，因为会自动添加空字符，但是超过了数组的维度，数组大小应该至少为7</span><br></pre></td></tr></table></figure>
+
+<p><strong>不允许拷贝和赋值</strong>，不能将数组的内容拷贝给其他数组作为初始值，也不能用数组为其他数组赋值。</p>
+<p><strong>复杂的数组声明</strong>，因为数组本身是对象，所以可以定义数组的指针和数组的引用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int *ptrs[10];            //含有10个整形指针的数组，从右向左</span><br><span class="line">int &amp;refs[10] = qwe;      //错误，不存在引用的数组</span><br><span class="line">int (*Parray)[10] = &amp;arr; //是指向一个含有10个整数的数组的指针，从内向外</span><br><span class="line">int(&amp;arrRef)[10] = arr;   //是一个含有10个整数的数组的引用</span><br><span class="line">int *(&amp;arry)[10] = ptrs;  //是一个含有10个整形指针的数组的引用</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h3><p>与vector和string一样，数组的元素也能使用范围for语句或下标运算符来访问。数组的索引从0开始。在使用数组下标时，通常被定义为size_t类型。size_t是一种机器相关的无符号类型，足够大以便表示内存中任意对象的大小。在cstddef头文件中定义了size_t类型。</p>
+<p>与之前一样，当需要遍历数组的所有元素时，最好的办法是使用范围for语句。</p>
+<p>要注意下标的值要在合理范围</p>
+<h3 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h3><p>指针和数组有非常紧密的联系。使用数组的时候编译器一般会把它转换成指针。和其他对象一样，对数组的元素使用取地址符就能得到指向该元素的指针，但在很多用到数组名字的地方，编译器会自动地将其替换为一个指向数组首元素的指针：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string *p2 = nums;  //等价于p2 = &amp;nums[0];</span><br></pre></td></tr></table></figure>
+
+<p>大多数情况下，使用数组类型的对象其实是使用一个指向该数组首元素的指针。当使用数组作为一个auto变量的初始值时，推断得到的类型是指针而非数组：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int ia[] = {0,1,2,3,4,5,6,7,8,9};</span><br><span class="line">auto ia2(ia);    //等价于auto ia2(&amp;ia[0]);</span><br><span class="line">ia2 = ia;   //ia2是一个指针，不能用int值赋给指针</span><br></pre></td></tr></table></figure>
+
+<p>要注意，如果是用decltype时，则不会有上述转换，decltype(ia)返回的类型是由10个整数构成的数组。</p>
+<p><strong>指针也是迭代器</strong>，vector和string的迭代器支持的运算，数组的指针全都支持。只要注意我们可以获取数组尾元素之后的那个不存在的元素的地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int *e = &amp;ia[10]; //使用下标运算符索引了一个不存在的元素(vector中不行)，也不能递增或解引用</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>标准库函数begin和end</strong>，尽管可以计算得到尾后指针，但很容易出错，所以C++引入begin和end函数，与容器中的同名函数功能类似。但数组不是类型，两个函数不是成员函数，所以是将数组作为他们的参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int ia[] = {0,1,2,3,4,5,6,7,8,9};</span><br><span class="line">int *beg = begin(ia);</span><br><span class="line">int *last = end(ia);    //begin和end定义在iterator头文件中</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>指针运算</strong>，之前列出的迭代器运算，指针都可以进行。注意几点即可。1.对尾后指针不能进行解引用和递增操作。2.如果指针进行移位后不在该数组的范围内了，则变成未定义的，是错误行为。3.两个指针相减的结果是它们之间的距离，参与运算的两个指针必须指向同一个数组当中的元素或尾元素的后一位置，相减结果类型是一种名为<strong>ptrdiff_t</strong>的标准库类型，定义在cstddef中，带符号。4.如果两个指针分别指向不相关对象，则不能通过关系运算符比较。</p>
+<p>上述指针运算可以适用于空指针和所指对象不是数组的指针。后者仍需两个指针指向同一对象。空指针时，允许其加上或减去一个值为0的整形常量表达式，也能彼此相减，结果自然都为0。</p>
+<p><strong>解引用和指针运算交互</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int ia[] = {0,1,2,3,4,5,6,7,8,9};</span><br><span class="line">int last = *(ia+4);   // 是ia[4]的值</span><br><span class="line">// int last = *ia +4  值是ia[0]+4</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>下标和指针</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int ia[] = {0,2,4,6,8};</span><br><span class="line">int i = ia[2]; //等价于 int *p =ia; i = *(p+2);</span><br></pre></td></tr></table></figure>
+
+<p>只要指向数组中的元素或尾元素的下一位置，都可执行下标运算。注意标准库类型限定使用的下标是无符号型，而内置的下标运算无此要求，可以处理负值，但结果地址当然也必须合理：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int *p = &amp;ia[2];</span><br><span class="line">int k = p[-2];    //即ia[0]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="C风格字符串"><a href="#C风格字符串" class="headerlink" title="C风格字符串"></a>C风格字符串</h3><p>先说明尽管C++支持C风格字符串，但还是最好不要使用。</p>
+<p>C风格字符串不是一种类型，其存放在字符数组中并以空字符结束。</p>
+<p><strong>C标准库string函数</strong>，这些函数定义在cstring头文件中</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">strlen(p)</td>
+<td align="center">返回p的长度</td>
+</tr>
+<tr>
+<td align="center">strcmp(p1,p2)</td>
+<td align="center">如果相等返回0，如果p1&gt;p2返回一个正值，&lt;则返回一个负值</td>
+</tr>
+<tr>
+<td align="center">strcat(p1,p2)</td>
+<td align="center">p2接到p1之后，返回p1</td>
+</tr>
+<tr>
+<td align="center">strcpy(p1,p2)</td>
+<td align="center">将p2拷贝给p1，返回p1</td>
+</tr>
+</tbody></table>
+<p>注意传入此类函数的指针<strong>必须指向以空字符作为结束的数组</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char ca[] = {'C','+','+'};</span><br><span class="line">cout&lt;&lt;strlen(ca)&lt;&lt;endl;   //严重错误，ca没有以空字符结束</span><br></pre></td></tr></table></figure>
+
+<p>程序将产生未定义的结果，strlen函数可能沿着ca在内存中的位置不断向前寻找，直到遇到空字符才停下来。</p>
+<p><strong>比较字符串</strong><br>不能用普通的关系运算符和相等性运算符。如果这样使用，实际上比较的将是指针而非字符串本身：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const char ca1[] = "A string example";</span><br><span class="line">const char ca2[] = "A different string";</span><br><span class="line">if(ca1&lt;ca2)    //未定义的：这是在比较两个无关地址</span><br><span class="line"></span><br><span class="line">if(strcmp(ca1,ca2)&lt;0) //要想比较两个C风格字符串，需要调用strcmp函数</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>目标字符串的大小由调用者指定</strong><br>同样，连接或拷贝C字符串的操作也与string对象差别很大：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string largeStr = s1 + " " + s2;  //两个指针相加，无意义且非法</span><br></pre></td></tr></table></figure>
+
+<p>正确的方法是使用strcat和strcpy函数。需要提供一个用于存放结果字符串的数组，该数组必须足够大以便容纳下结果字符串及末尾的空字符：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">strcpy(largeStr,ca1);</span><br><span class="line">strcat(largeStr," ");</span><br><span class="line">strcat(largeStr,ca2);</span><br></pre></td></tr></table></figure>
+
+<p>但是这样充满风险，largeStr所属空间不容易估计，且所存内容如果发生改变，必须要重新检查空间是否足够。</p>
+<h3 id="与旧代码的接口"><a href="#与旧代码的接口" class="headerlink" title="与旧代码的接口"></a>与旧代码的接口</h3><p>很多C++程序在标准库出现之前就已经写成，而且有一些C++程序实际上是与C语言或其他语言的接口程序。因此，现代C++程序会与那些充满了数组和C风格字符串的代码衔接。</p>
+<p><strong>允许使用字符串字面值来初始化string对象</strong>：<code>string s("Hello World ");</code> 更一般的情况是，<strong>任何出现字符串字面值的地方都可以用以空字符结束的字符数组来替代</strong>。具体看面几节。</p>
+<p>但如果某处需要一个C风格字符串，无法直接用string对象来代替它，例如不能用string对象直接初始化指向字符串的指针。为了完成该功能，string提供了一个c_str的成员函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char *str = s;    //错误，不能用string对象初始化char*</span><br><span class="line">const char *str = s.c_str();  //函数的返回结果是一个指针，指向以空字符结束的字符数组。</span><br></pre></td></tr></table></figure>
+
+<p>但是如果后续操作改变了s的值，可能会让之前返回的数组失去效用。</p>
+<p><strong>使用数组初始化vector对象</strong>，但不能用数组给数组赋值，也不能用vector对象初始化数组。实现这一目的，指明拷贝区域的首元素地址和尾后地址即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int arr[] = {0,1,2,3,4,5};</span><br><span class="line">vector&lt;int&gt; ivec(begin(arr),end(arr));</span><br></pre></td></tr></table></figure>
+
+<p>用于初始化的值也可能仅是数组的一部分：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; sub(arr+1,arr+4);  //3个元素为arr[1]、arr[2]、arr[3]包括第一个元素但不包括最后的元素</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>严格来说，所说的多维数组就是数组的数组。当一个数组的元素仍然是数组时，需要两个维度来定义：一个维度表示数组本身大小，另外一个维度表示其元素的大小。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a[3][4];  //大小为3的数组，每个元素是含有4个整数的数组</span><br><span class="line">int arr[10][20][30];//大小为10的数组，它的每个元素是大小为20的数组，这些数组的元素是含有30个整数的数组</span><br></pre></td></tr></table></figure>
+
+<p>对于二维数组来说，第一个维度称作行，第二个维度称作列。</p>
+<p><strong>多维数组的初始化</strong>，主要是花括号的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int a[3][4] = {</span><br><span class="line">	{0,1,2,3},</span><br><span class="line">	{4,5,6,7},</span><br><span class="line">	{8,9,10,11}</span><br><span class="line">};       //花括号括起一组初始值，每一行的初始值再分别用花括号括起</span><br><span class="line">int a[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11}; // 内层嵌套的花括号也可以不用</span><br><span class="line">int a[3][4] = {{0},{4},{8}}; //仅初始化每一行第一个元素，其他默认初始化</span><br><span class="line">int a[3][4] = {0,3,6,9};  // 按顺序初始化，此处则仅初始化第一行，其他默认初始化</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>多维数组的下标引用</strong>，此时数组的每个维度对应一个下标运算符。<br>如果下标运算符数量和数组维度一样多，该表达式的结果就是给定类型的元素。如果前者比后者小，结果就是给定索引处的一个内层数组：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[2][3] = arr[0][0][0]; //用arr的首元素给a的最后一个元素赋值</span><br><span class="line">int (&amp;row)[4] = a[1];   //row是a第二个4元素数组的引用</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>使用范围for语句处理多维数组</strong></p>
+<p>很明显需要采用范围for语句的嵌套循环。要注意的是<strong>使用范围for语句处理多维数组时，除了最内层的循环外，其他所有循环的控制变量都应该是引用类型。</strong><br>假设是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(auto row : a)</span><br><span class="line">	for(auto col : row)</span><br></pre></td></tr></table></figure>
+
+<p>第一行会循环遍历a的所有元素，注意这些元素实际上是大小为4的数组，因为row不是引用类型，所以编译器初始化row时会自动将这些数组形式的元素转换成指向该数组内首元素的指针。这样得到的row就是int*类型，显然内层的循环就不合法了。</p>
+<p><strong>指针和多维数组</strong></p>
+<p>当使用多维数组的名字时，也会自动将其转换成数组首元素的指针。因为多维数组是数组的数组，所以转换来的指针是指向第一个内层数组的指针：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a[3][4];</span><br><span class="line">int (*p)[4] = a;   //p是指向含有4个整数的数组的指针，注意括号</span><br><span class="line">p = &amp;a[2];         //p指向a元素中最后一个数组</span><br></pre></td></tr></table></figure>
+
+<p>使用auto和decltype可以更简洁：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(auto p = a; p != a+3; ++p){</span><br><span class="line">	for(auto q = *p; q != *p + 4; ++q)</span><br><span class="line">		cout&lt;&lt;*q&lt;&lt;' ';</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>也可用<strong>类型别名简化多维数组的指针</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">using arr = int[4];</span><br><span class="line">typedef int arr[4];   //两者等价</span><br><span class="line"></span><br><span class="line">for(arr *p = a; p != a+3; ++p){</span><br><span class="line">	for(arr *q = *p; q != *p + 4; ++q)</span><br><span class="line">		cout&lt;&lt;*q&lt;&lt;' ';</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>即将类型”4个整数组成的数组“命名为arr。</p>
+<h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1>
     </div>
 
     
@@ -1163,7 +1332,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">C++基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">算术类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">字面值常量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">名字的作用域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">理解复合类型的声明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.1.4.</span> <span class="nav-text">const限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#const%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">const的引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.5.</span> <span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">类型别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">decltype类型说明符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.6.</span> <span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string%E3%80%81vector%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">1.2.</span> <span class="nav-text">string、vector和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-number">1.2.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96string%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">定义和初始化string对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">string对象上的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86string%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">处理string对象中的字符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector"><span class="nav-number">1.2.3.</span> <span class="nav-text">标准库类型vector</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96vector%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">定义和初始化vector对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91vector%E5%AF%B9%E8%B1%A1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">向vector对象中添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96vector%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">其他vector操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.4.</span> <span class="nav-text">迭代器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">使用迭代器</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">算术类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.3.</span> <span class="nav-text">字面值常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.3.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.2.4.</span> <span class="nav-text">名字的作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.3.2.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">1.3.3.</span> <span class="nav-text">理解复合类型的声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.4.</span> <span class="nav-text">const限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">const的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-number">1.4.2.</span> <span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-number">1.4.3.</span> <span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">1.5.1.</span> <span class="nav-text">类型别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.2.</span> <span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.3.</span> <span class="nav-text">decltype类型说明符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.6.</span> <span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%E3%80%81vector%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">string、vector和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-number">2.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96string%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义和初始化string对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.2.</span> <span class="nav-text">string对象上的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86string%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.3.</span> <span class="nav-text">处理string对象中的字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector"><span class="nav-number">2.3.</span> <span class="nav-text">标准库类型vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96vector%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.1.</span> <span class="nav-text">定义和初始化vector对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91vector%E5%AF%B9%E8%B1%A1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.2.</span> <span class="nav-text">向vector对象中添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96vector%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.3.</span> <span class="nav-text">其他vector操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.</span> <span class="nav-text">迭代器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">2.4.1.</span> <span class="nav-text">使用迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BF%90%E7%AE%97"><span class="nav-number">2.4.2.</span> <span class="nav-text">迭代器运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.1.</span> <span class="nav-text">定义和初始化内置数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="nav-number">2.5.2.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.3.</span> <span class="nav-text">指针和数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.5.4.</span> <span class="nav-text">C风格字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%97%A7%E4%BB%A3%E7%A0%81%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.5.5.</span> <span class="nav-text">与旧代码的接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">2.6.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">表达式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1234,13 +1403,13 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">64k</span>
+    <span title="站点总字数">72k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">58 分钟</span>
+    <span title="站点阅读时长">1:05</span>
 </div>
 
         
