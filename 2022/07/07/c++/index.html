@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://example.com/image/image-20220708150542690.png">
 <meta property="og:image" content="http://example.com/image/image-20220708170340900.png">
 <meta property="article:published_time" content="2022-07-07T12:58:37.000Z">
-<meta property="article:modified_time" content="2022-07-17T10:25:17.864Z">
+<meta property="article:modified_time" content="2022-07-17T13:20:46.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/image/image-20220708150542690.png">
 
@@ -306,7 +306,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-17 18:25:17" itemprop="dateModified" datetime="2022-07-17T18:25:17+08:00">2022-07-17</time>
+                <time title="修改时间：2022-07-17 21:20:46" itemprop="dateModified" datetime="2022-07-17T21:20:46+08:00">2022-07-17</time>
               </span>
 
           <br>
@@ -315,14 +315,14 @@ mjx-container[display="true"] + br {
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>35k</span>
+              <span>38k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>32 分钟</span>
+              <span>35 分钟</span>
             </span>
             <div class="post-description">C++ Primer 基础篇 笔记</div>
 
@@ -1408,7 +1408,121 @@ mjx-container[display="true"] + br {
 <h2 id="成员访问运算符"><a href="#成员访问运算符" class="headerlink" title="成员访问运算符"></a>成员访问运算符</h2><p>即点运算符和箭头运算符。然后ptr-&gt;mem 等价于(*ptr).mem。</p>
 <p>因为解引用运算符的优先级低于点运算符，所以执行解引用运算的子表达式两端必须加上括号。</p>
 <p>箭头运算符作用于一个指针类型的运算对象，结果是一个左值。 点运算符：如果成员所属对象是左值，结果是左值，成员所属对象是右值，结果是右值。</p>
-<h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><p>即</p>
+<h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><p>即 <strong>？：</strong>，形式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cond ? expr1 : expr2; </span><br></pre></td></tr></table></figure>
+
+<p>其中cond是判断条件的表达式，而expr1和expr2是两个类型相同或可能转换为某个公共类型的表达式。过程：先求cond的值，如果条件为真对expr1求值并返回该值，否则对expr2求值并返回该值，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string finalgrade = (grade &lt; 60)? "fail" : "pass";</span><br></pre></td></tr></table></figure>
+
+<p>即grade&lt;60则结果为fail，否则结果为pass。条件运算符只对expr1和expr2中的一个求值。</p>
+<p>当条件运算符的两个表达式都是左值或者能够转换成同一左值类型时，运算结果是左值，否则运算结果为右值。</p>
+<p><strong>嵌套条件运算符</strong><br>即运用了条件运算符的表达式可以作为另一个条件运算符的cond或expr，直接举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finalgrade = (grade &gt; 90) ? "high pass" : (grade &lt; 60)? "fail" : "pass";</span><br></pre></td></tr></table></figure>
+
+<p>条件运算符满足右结合律，所以上式靠右边的条件运算构成了靠左边的条件运算中的expr。</p>
+<p><strong>在输出表达式中使用条件运算符</strong><br>条件运算符的优先级非常低，所以括号的有无很重要：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; ((grade &lt; 60) ? "fail" : "pass");  //正确输出</span><br><span class="line">cout &lt;&lt; (grade &lt; 60) ? "fail" : "pass";    //end变成了(cout&lt;&lt;(grade &lt; 60)),输出0或1</span><br><span class="line">cout &lt;&lt; grade &lt; 60 ? "fail" : "pass";      //错误，试图比较cout和60</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>位运算符作用于整数类型的运算对象，并把运算对象看成是二进制位的集合。17.2节将要介绍的，一种名为bitset的标准库类型也可以表示任意大小的二进制位集合，所以位运算符同样能用于bitset类型。</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">~</td>
+<td align="center">位求反</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">左移</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td align="center">右移</td>
+</tr>
+<tr>
+<td align="center">&amp;</td>
+<td align="center">位与</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">位异或</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">位或</td>
+</tr>
+</tbody></table>
+<p><strong>一般情况，如果运算对象是“小整型”，则会自动提升成较大的整数类型</strong>。运算对象可以是带符号的，也可以是无符号的。如果值为负数，那么如果处理运算对象的符号位依赖于机器。而且左移操作会改变符号位的值，因此是一种未定义的行为。所以强烈建议仅将位运算符用于处理无符号类型。</p>
+<p><strong>移位运算符</strong><br>之前使用的标准IO定义的&lt;&lt;和&gt;&gt;运算符就是移位运算符的重载版本。这两种运算符的内置含义是对其运算对象执行基于二进制位的移动操作。首先令左侧运算对象的内容按右侧运算对象的要求移动指定位数，然后将经过移动的左侧运算对象的拷贝作为求值结果。<strong>右侧的运算对象一定不能为负</strong>，且值要严格小于结果的位数，否则会产生未定义的行为。左侧运算对象移出边界之外的位就被舍弃了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unsigned char bits = 0233;   // 10011011</span><br><span class="line">bits &lt;&lt;8;  //bits会提升成int类型，然后向左移动8位</span><br><span class="line">bits &lt;&lt; 31;</span><br><span class="line">bits &gt;&gt; 3;  // 超出边界的位丢弃掉了</span><br></pre></td></tr></table></figure>
+
+<p>左移运算符在右侧插入值为0的二进制位。右移运算符要依赖于左侧运算对象的类型：无符号则在左侧插入值为0的二进制位；带符号则在左侧插入符号位的副本或值为0的二进制位，如何选择视环境而定。</p>
+<p><strong>位求反运算符</strong><br>将运算对象逐位求反，1就变成0，0就变成1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unsigned char bits = 0227;</span><br><span class="line">bits = ~bits;</span><br></pre></td></tr></table></figure>
+
+<p>先把bits提升为int类型，再逐位取反。</p>
+<p><strong>位与、位或、位异或运算符</strong><br>对于位与运算符，两个运算对象对应位置都为1，则结果中该位为1，否则为0；对于位或运算符，对应位置只要有一个为1，则结果中该位为1，没有1，则为0；对于位异或运算符，如果对应位置不同(1和0)，则结果中该位为1，相同则为0。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">unsigned char b1 = 0145;// 01100101</span><br><span class="line">unsigned char b2 = 0257;// 10101111</span><br><span class="line">b1 &amp; b2; //前面24位都是0，后面00100101</span><br><span class="line">b1 | b2; //前面24位都是0，后面11101111</span><br><span class="line">b1 ^ b2; //前面24位都是0，后面11001010</span><br></pre></td></tr></table></figure>
+
+<p>注意于前面的逻辑运算符的区分</p>
+<p><strong>使用位运算符</strong><br>例子就不写了。记住运用时每一种二进制可单独表示一种状态。然后位运算可以使用复合运算符，与之前的算术复合运算符的用法一致。</p>
+<p><strong>移位运算符(IO运算符)满足左结合律</strong><br>重载运算符的优先级和结合律和它的内置版本一样，所以也有必要理解移位运算符的优先级和结合律。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; "hi" &lt;&lt; "there" &lt;&lt; endl;</span><br><span class="line">//因为左结合律，所以等同于  ((cout&lt;&lt;"hi")&lt;&lt;"there")&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<p>移位运算符的优先级不高不低，比算术运算符的优先级低，但比关系运算符、赋值运算符和条件运算符的优先级高。实际使用种，如果不确定就尽量多使用括号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; 42 + 10;   //+的优先级大于&lt;&lt;，输出52</span><br><span class="line">cout &lt;&lt; (10 &lt; 42); //有括号，输出1</span><br><span class="line">cout &lt;&lt; 10 &lt; 42;   //错误，试图比较cout对象和42，实际是(cout&lt;&lt;10)&lt;42</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="sizeof运算符"><a href="#sizeof运算符" class="headerlink" title="sizeof运算符"></a>sizeof运算符</h2><p>sizeof运算符返回一条表达式或一个类型名字所占的字节数，满足右结合律，所得的值是一个size_t类型的常量表达式。运算符的运算对象有两种形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sizeof (type);  //类型</span><br><span class="line">sizeof expr;    //表达式  其实就是返回表达式结果类型的大小</span><br></pre></td></tr></table></figure>
+
+<p>但其实siezof并不实际计算其运算对象的值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Sales_data data, *p;</span><br><span class="line">sizeof(Sales_data);    //存储Sales_data类型的对象所占空间的大小</span><br><span class="line">sizeof data;           //data类型大小， 即sizeof(Sales_data)</span><br><span class="line">sizeof p;    		   //指针所占空间的大小</span><br><span class="line">sizeof *p;             //p所指类型的大小，即sizeof(Sales_data)</span><br><span class="line">sizeof data.revenue;   //Sales_data的revenue成员对应类型的大小</span><br><span class="line">sizeof Sales_data::revenue;//另一种获取revenue大小的方式</span><br></pre></td></tr></table></figure>
+
+<p>注意 sizeof *p，因为sizeof满足右结合律并与*运算符的优先级一样，所以表达式按照从右向左的顺序组合，即等价于sizeof(*p)。其次，因为sizeof不会实际求运算对象的值，所以即使p是一个无效指针也不影响。在sizeof的运算对象中解引用一个无效指针也仍是安全行为，因为指针实际上没有使用。sizeof不需要解引用也可以知道它所指对象的类型。</p>
+<p>然后C++11新标准允许我们使用作用域运算符来获取类成员的大小。通常情况下，只有通过类的对象才能访问到类的成员，但是sizeof运算符无须我们提供一个具体的对象，所以就像上述最后一行所示，也能获取类成员的大小。</p>
+<p>以下是sizeof运算符的常见几种运算对象和结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">对象</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">char或char表达式</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">引用</td>
+<td align="center">被引用对象所占空间大小</td>
+</tr>
+<tr>
+<td align="center">指针</td>
+<td align="center">指针本身所占空间大小</td>
+</tr>
+<tr>
+<td align="center">解引用指针</td>
+<td align="center">指针指向对象的所占空间大小，指针不需有效</td>
+</tr>
+<tr>
+<td align="center">数组</td>
+<td align="center">整个数组中元素所占空间大小，不会把数组当指针处理</td>
+</tr>
+<tr>
+<td align="center">string或vector对象</td>
+<td align="center">该类型固定部分的大小，不会计算对象中元素所占空间</td>
+</tr>
+</tbody></table>
+<h2 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h2><p>逗号运算符含有两个运算对象，按照从左向右顺序求值，即逗号运算符也规定了运算对象求值的顺序。计算过程：首先对左侧的表达式求值，然后将求值结果丢弃。逗号运算符真正的结果是右侧表达式的值。如果右侧运算对象是左值，那么最终的求值结果也是左值。</p>
+<h2 id="类型转换-1"><a href="#类型转换-1" class="headerlink" title="类型转换"></a>类型转换</h2><p>C++中，某些类型之间有关联。如果两种类型有关联，那么当程序需要其中一个类型的运算对象时，可以用另一种关联类型的对象或值替代。即如果两种类型可以相互转换，那么它们就是关联的。</p>
 
     </div>
 
@@ -1506,7 +1620,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">算术类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.3.</span> <span class="nav-text">字面值常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.3.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.2.4.</span> <span class="nav-text">名字的作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.3.2.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">1.3.3.</span> <span class="nav-text">理解复合类型的声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.4.</span> <span class="nav-text">const限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">const的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-number">1.4.2.</span> <span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-number">1.4.3.</span> <span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">1.5.1.</span> <span class="nav-text">类型别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.2.</span> <span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.3.</span> <span class="nav-text">decltype类型说明符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.6.</span> <span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%E3%80%81vector%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">string、vector和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-number">2.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96string%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义和初始化string对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.2.</span> <span class="nav-text">string对象上的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86string%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.3.</span> <span class="nav-text">处理string对象中的字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector"><span class="nav-number">2.3.</span> <span class="nav-text">标准库类型vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96vector%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.1.</span> <span class="nav-text">定义和初始化vector对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91vector%E5%AF%B9%E8%B1%A1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.2.</span> <span class="nav-text">向vector对象中添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96vector%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.3.</span> <span class="nav-text">其他vector操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.</span> <span class="nav-text">迭代器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">2.4.1.</span> <span class="nav-text">使用迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BF%90%E7%AE%97"><span class="nav-number">2.4.2.</span> <span class="nav-text">迭代器运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.1.</span> <span class="nav-text">定义和初始化内置数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="nav-number">2.5.2.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.3.</span> <span class="nav-text">指针和数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.5.4.</span> <span class="nav-text">C风格字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%97%A7%E4%BB%A3%E7%A0%81%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.5.5.</span> <span class="nav-text">与旧代码的接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">2.6.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">3.1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.2.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%92%8C%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑和关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.5.</span> <span class="nav-text">递增和递减运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.6.</span> <span class="nav-text">成员访问运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.7.</span> <span class="nav-text">条件运算符</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">变量和基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">基本内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">算术类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%9D%A2%E5%80%BC%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.3.</span> <span class="nav-text">字面值常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">变量声明和定义的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.3.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.2.4.</span> <span class="nav-text">名字的作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.3.2.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">1.3.3.</span> <span class="nav-text">理解复合类型的声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.4.</span> <span class="nav-text">const限定符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">const的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8Cconst"><span class="nav-number">1.4.2.</span> <span class="nav-text">指针和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82const"><span class="nav-number">1.4.3.</span> <span class="nav-text">顶层const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constexpr%E5%92%8C%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">constexpr和常量表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">处理类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">1.5.1.</span> <span class="nav-text">类型别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.2.</span> <span class="nav-text">auto类型说明符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#decltype%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6"><span class="nav-number">1.5.3.</span> <span class="nav-text">decltype类型说明符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.6.</span> <span class="nav-text">自定义数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">编写头文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%E3%80%81vector%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">string、vector和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84using%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">命名空间的using声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bstring"><span class="nav-number">2.2.</span> <span class="nav-text">标准库类型string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96string%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义和初始化string对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.2.</span> <span class="nav-text">string对象上的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86string%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.3.</span> <span class="nav-text">处理string对象中的字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%B1%BB%E5%9E%8Bvector"><span class="nav-number">2.3.</span> <span class="nav-text">标准库类型vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96vector%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.1.</span> <span class="nav-text">定义和初始化vector对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91vector%E5%AF%B9%E8%B1%A1%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.2.</span> <span class="nav-text">向vector对象中添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96vector%E6%93%8D%E4%BD%9C"><span class="nav-number">2.3.3.</span> <span class="nav-text">其他vector操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.4.</span> <span class="nav-text">迭代器介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">2.4.1.</span> <span class="nav-text">使用迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BF%90%E7%AE%97"><span class="nav-number">2.4.2.</span> <span class="nav-text">迭代器运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.1.</span> <span class="nav-text">定义和初始化内置数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="nav-number">2.5.2.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">2.5.3.</span> <span class="nav-text">指针和数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E9%A3%8E%E6%A0%BC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.5.4.</span> <span class="nav-text">C风格字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%97%A7%E4%BB%A3%E7%A0%81%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.5.5.</span> <span class="nav-text">与旧代码的接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">2.6.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">3.1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.2.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%92%8C%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑和关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.4.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.5.</span> <span class="nav-text">递增和递减运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.6.</span> <span class="nav-text">成员访问运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.7.</span> <span class="nav-text">条件运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.8.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.9.</span> <span class="nav-text">sizeof运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.10.</span> <span class="nav-text">逗号运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><span class="nav-number">3.11.</span> <span class="nav-text">类型转换</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1577,13 +1691,13 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
 
         
