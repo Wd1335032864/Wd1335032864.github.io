@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>行列式 | 黄油小熊的世界</title><meta name="author" content="黄油小熊"><meta name="copyright" content="黄油小熊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&#x2F;* 整体样式 *&#x2F;   details {     border: 1px solid transparent; &#x2F;* 初始透明边框保持布局稳定 *&#x2F;     border-radius: 8px;     margin: 10px 0;     transition: all 0.3s ease; &#x2F;* 平滑过渡效果 *&#x2F;   }   &#x2F;* 展开时添加边框 *&#x2F;   details [o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行列式">
+<meta property="og:url" content="http://example.com/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/index.html">
+<meta property="og:site_name" content="黄油小熊的世界">
+<meta property="og:description" content="&#x2F;* 整体样式 *&#x2F;   details {     border: 1px solid transparent; &#x2F;* 初始透明边框保持布局稳定 *&#x2F;     border-radius: 8px;     margin: 10px 0;     transition: all 0.3s ease; &#x2F;* 平滑过渡效果 *&#x2F;   }   &#x2F;* 展开时添加边框 *&#x2F;   details [o">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cover.avif">
+<meta property="article:published_time" content="2025-08-18T02:16:28.000Z">
+<meta property="article:modified_time" content="2025-08-20T15:15:35.456Z">
+<meta property="article:author" content="黄油小熊">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cover.avif"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "行列式",
+  "url": "http://example.com/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/",
+  "image": "http://example.com/img/cover.avif",
+  "datePublished": "2025-08-18T02:16:28.000Z",
+  "dateModified": "2025-08-20T15:15:35.456Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "黄油小熊",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '行列式',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.avif);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butter-bear.avif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">黄油小熊的世界</span></a><a class="nav-page-title" href="/"><span class="site-name">行列式</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">行列式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-18T02:16:28.000Z" title="发表于 2025-08-18 10:16:28">2025-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-20T15:15:35.456Z" title="更新于 2025-08-20 23:15:35">2025-08-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><style>
+  /* 整体样式 */
+  details {
+    border: 1px solid transparent; /* 初始透明边框保持布局稳定 */
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: all 0.3s ease; /* 平滑过渡效果 */
+  }
+  /* 展开时添加边框 */
+  details [open] {
+    border: 1px solid #2ECC71; /* 使用与标题相同的绿色 */
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.2); /* 添加轻微阴影增强效果 */
+    padding: 10px;
+    background: #f8fff8; /* 非常浅的绿色背景 */
+  }
+ /* 标题样式 */
+  summary > span {
+    display: inline-block; /* 使整个标题可点击 */
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+</style>
+ <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+
+
+
+<h1 id="具体行列式计算"><a href="#具体行列式计算" class="headerlink" title="具体行列式计算"></a>具体行列式计算</h1><h2 id="么字型"><a href="#么字型" class="headerlink" title="么字型"></a>么字型</h2><p>型如：$\begin{vmatrix} 0 & 0&-1&1 \\ 0 & -2&2&0 \\ -3&3&0&0 \\ 4&3&2&1 \end{vmatrix}$<br>该题型有四种方法：</p>
+<ol>
+<li>递推法，将么字较远两端顶点展开可以得到递推式，该方法主要用于三对角处，这里不介绍。</li>
+<li>行(列)变换其一，如上，从最右边一列开始，逐列(倍)加到前面一列，消去对角线旁边那一条线，得到爪型$\begin{vmatrix} 0 & 0&0&1\\ 0 & 0&2&0\\0&3&0&0\\10&6&3&1 \end{vmatrix}$</li>
+<li>行(列)变换其二，如上，从最左边一列开始，逐列(倍)加到后面一列，消去对角线，得到爪型$\begin{vmatrix} 0 & 0&-1&0\\ 0 & -2&0&0\\-3&0&0&0\\4&7&9&10 \end{vmatrix}$</li>
+<li>李范书上的方法，<strong>按么字底这一行展开</strong>，实践证明该方法基本通杀该题型，也秒杀其他方法。</li>
+</ol>
+<h3 id="显式低阶么字"><a href="#显式低阶么字" class="headerlink" title="显式低阶么字"></a>显式低阶么字</h3><p>计算行列式$\begin{vmatrix} \lambda & -1&0&0\\ 0 & \lambda&-1&0\\0&0&\lambda&-1\\4&3&2&\lambda+1 \end{vmatrix} $</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 用方法 2 或 3 去消去时，如果不是倍数关系就会略显麻烦。用方法 4 可以直接写答案
+$4+3\lambda +2\lambda^2 +\lambda^3 + \lambda^4$
+</details>
+
+<h3 id="显式-n-阶么字"><a href="#显式-n-阶么字" class="headerlink" title="显式 n 阶么字"></a>显式 n 阶么字</h3><ol>
+<li><p>n 阶行列式$\begin{vmatrix}2&0&\cdots&0&2\\-1&2&\cdots&0&2\\\vdots&\vdots&\ddots &\vdots&\vdots\\0&0&\cdots&2&2\\0&0&\cdots&-1&2 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 用方法 4 展开最后一列有：$2^n+2^{n-1}+...+2=\frac{2(1-2^n)}{1-2}=2^{n+1}-2$
+</details>
+</li>
+<li><p>计算 $n$ 阶行列式 $D_n&#x3D;$$\begin{vmatrix}a_0&-1&0&\cdots&0&0\\ a_{1}&x&-1&\cdots&0&0\\a_2&0&x&\cdots&0&0\\ \vdots&\vdots&\vdots&\ddots &\vdots&\vdots\\a_{n-2}&0&0&\cdots&x&-1\\a_{n-1}&0&0&\cdots&0&x \end{vmatrix}$</p>
+</li>
+</ol>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 用方法 4 展开第一列有：$a_{n-1}+xa_{n-2}+..+x^{n-1-i}a_i+...+x^{n-1}a_0$ $=\displaystyle\sum_{i=1}^{n-1}x^{n-1-i}a_i$
+</details>
+
+<h3 id="隐式低阶么字"><a href="#隐式低阶么字" class="headerlink" title="隐式低阶么字"></a>隐式低阶么字</h3><p>计算$\begin{vmatrix}a&b&b&b&b\\ c&a&b&b&b\\ c&c&a &b&b\\ c&c&c&a&b\\ c&c&c&c&a \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 各行减上行，得到 $\begin{vmatrix}a&b&b&b&b\\c-a&a-b&0&0&0\\0&c-a&a-b &0&0\\0&0&c-a&a-b&0\\0&0&0&c-a&a-b \end{vmatrix}$，再展开第一行即可。
+</details>
+
+
+<h2 id="X-型"><a href="#X-型" class="headerlink" title="X 型"></a>X 型</h2><p>该题型形式和解法都比较固定。凑方阵即可，熟悉后可直接写答案。</p>
+<h3 id="直接-x-型"><a href="#直接-x-型" class="headerlink" title="直接 x 型"></a>直接 x 型</h3><p>计算该 6 阶行列式$\begin{vmatrix}a_1&0&0&0&0&b_1\\ 0&a_2&0&0&b_2&0\\ 0&0&a_3 &b_3&0&0\\ 0&0&c_3 &d_3&0&0\\ 0&c_2&0&0&d_2&0\\c_1&0&0&0&0&d_1 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+经过行列变换成 $\begin{vmatrix}a_1&b_1&0&0&0&0\\c_1&d_1&0&0&0&0\\ 0&0&a_3 &b_3&0&0\\ 0&0&c_3 &d_3&0&0\\ 0&0&0&0&d_2&c_2\\0&0&0&0&b_2&a_2 \end{vmatrix}$ $=(a_1d_1-b_1c_1)$ $(a_2d_2-b_2c_2)$ $(a_3d_3-b_3c_3)$ <br>
+四阶同样如此，凑方阵成拉普拉斯形式即可得答案。
+</details>
+
+<h3 id="类-x-型"><a href="#类-x-型" class="headerlink" title="类 x 型"></a>类 x 型</h3><p>形式略有差别，解法相同。</p>
+$\begin{vmatrix} 0 & a&b&0 \\ a & 0&0&b \\ 0&c&d&0 \\ c&0&0&d \end{vmatrix}$
+
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+经过行列变换成 $\begin{vmatrix}   b&a&0&0 \\ d & c&0&0 \\ 0&0&a&b \\ 0&0&c&d \end{vmatrix}$ $=-(ad-bc)^2$
+  </details>
+
+
+
+<h2 id="范德蒙式"><a href="#范德蒙式" class="headerlink" title="范德蒙式"></a>范德蒙式</h2><p>题目一般比较隐晦，切入点在找出全为 1 的那一关键行。但是有时候 $a_i$ 为 1 时，$a_i^x$ 也都为 1，要区分这两个。关键行紧邻的另一行一定包括所有 $a_i$</p>
+<h3 id="倍加凑一型"><a href="#倍加凑一型" class="headerlink" title="倍加凑一型"></a>倍加凑一型</h3><ol>
+<li>$\begin{vmatrix}6&7&8&9\\4^2&3^2&2^2&1 \\4^3&3^3&2^3&1 \\4&3&2&1 \end{vmatrix}$
+
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+最后一行加到第一行后：$10\begin{vmatrix}1&1&1&1 \\4^2&3^2&2^2&1\\4^3&3^3&2^3&1 \\4&3&2&1 \end{vmatrix}$ $=120$
+  </details>
+</li>
+<li><p>设 $a_1,a_2,a_3$ 为互不相等的实数，计算$\begin{vmatrix}3&3&3\\3a_1+5&3a_2+5&3a_3+5 \\3a_1^2+5a_1+7&3a_2^2+5a_2+7&3a_3^2+5a_3+7\end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 直接看出答案：$27(a_3-a_2)(a_3-a_1)(a_2-a_1)$
+  </details>
+</li>
+<li><p>计算行列式$\begin{vmatrix}b^2+c^2&a^2+c^2&a^2+b^2\\a&b&c \\a^2&b^2&c^2\end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 最后一行加到第一行，直接看出答案：$(a^2+b^2+c^2)(a-b)(a-c)(b-c)$
+  </details>
+</li>
+<li><p>利用范德蒙行列式计算$\begin{vmatrix}a&a^2&bc\\b&b^2&ac \\c&c^2&ab\end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 第一列倍乘 $(a+b+c)$ 加到第三列得到: $\begin{vmatrix}a&a^2&a^2+ac+ab+bc\\b&b^2&b^2+ac+ab+bc \\c&c^2&c^2+ac+ab+bc\end{vmatrix}$ $=\begin{vmatrix}a&a^2&ac+ab+bc\\b&b^2&ac+ab+bc \\c&c^2&ac+ab+bc\end{vmatrix}$ $=(ac+ab+bc)(a-b)(a-c)(c-b)$
+  </details></li>
+</ol>
+<h3 id="提系数凑一型"><a href="#提系数凑一型" class="headerlink" title="提系数凑一型"></a>提系数凑一型</h3><ol>
+<li><p>计算行列式$\begin{vmatrix}1&1&1&1 \\2&2^2&2^3&2^4 \\3&3^2&3^3&3^4 \\ 4&4^2&4^3&4^4 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 二三四行分别提出 2、3、4 得到: $\begin{vmatrix}1&1&1&1 \\1&2&2^2&2^3 \\1&3&3^2&3^3 \\ 1&4&4^2&4^3 \end{vmatrix}$ $=24*12=288$ <br>
+不要被第一行的 1 迷惑
+  </details>
+</li>
+<li><p>设 $a_1,a_2,a_3,a_4$ 为非零常数，计算行列式$\begin{vmatrix}a_1^3&a_1^2b_1&a_1b_1^2&b_1^3 \\a_2^3&a_2^2b_2&a_2b_2^2&b_2^3 \\a_3^3&a_3^2b_3&a_3b_3^2&b_3^3 \\ a_4^3&a_4^2b_4&a_4b_4^2&b_4^3 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 一二三四行分别提出 $a_i^3$ 得到 $a_1^3a_2^3a_3^3a_4^3$ $\begin{vmatrix}1&\frac{a_1}{b_1}&\frac{a_1^2}{b_1^2}&\frac{a_1^3}{b_1^3} \\1&\frac{a_2}{b_2}&\frac{a_2^2}{b_2^2}&\frac{a_2^3}{b_2^3} \\1&\frac{a_3}{b_3}&\frac{a_3^2}{b_3^2}&\frac{a_3^3}{b_3^3} \\ 1&\frac{a_4}{b_4}&\frac{a_4^2}{b_4^2}&\frac{a_4^3}{b_4^3} \end{vmatrix}$ $=\displaystyle\prod_{i=1}^{4}a_i^3\displaystyle\prod_{1\le i < j\le4}(\frac{b_j}{a_j}-\frac{b_i}{b_j})$
+  </details></li>
+</ol>
+<h2 id="行-列-和相等"><a href="#行-列-和相等" class="headerlink" title="行(列)和相等"></a>行(列)和相等</h2><p>基本类型为主对角线 ab 型，副对角线的话可以通过行列变换变到主对角线上来。具体行列变换的处理手段有很多种，选择一种自己熟悉的即可。</p>
+<h3 id="ab-型"><a href="#ab-型" class="headerlink" title="ab 型"></a>ab 型</h3><ol>
+<li><p>计算行列式$\begin{vmatrix}a&b&b&\cdots&b\\ b&a&b&\cdots&b\\ b&b&a&\cdots&b\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ b&b&b&\cdots&a \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 每一列加到第一列得到: $[a+(n-1)b]\begin{vmatrix}1&b&b&\cdots&b\\ 1&a&b&\cdots&b\\ 1&b&a&\cdots&b\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ 1&b&b&\cdots&a \end{vmatrix}$<br>
+ 然后将 2 至 n 行都减去第 1 行化成上三角式: $[a+(n-1)b]\begin{vmatrix}1&b&b&\cdots&b\\ 0&a-b&0&\cdots&0\\ 0&0&a-b&\cdots&0\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ 0&0&0&\cdots&a-b \end{vmatrix}$ $=(a+(n-1)b)(a-b)^{n-1}$
+<br>本题答案当结论记
+  </details>
+</li>
+<li><p>计算行列式$\begin{vmatrix}1&1&1&0 \\1&1&0&1\\1&0&1&1 \\0&1&1&1 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 第一列和第四列交换，第二列和第三列交换。随后成主对角线 ab 型，代入上题公式得答案为 3.
+  </details></li>
+</ol>
+<h3 id="隐藏-ab-型"><a href="#隐藏-ab-型" class="headerlink" title="隐藏 ab 型"></a>隐藏 ab 型</h3><p>计算行列式$\begin{vmatrix}1&4&3&2\\2&1&4&3\\3&2&1&4 \\4&3&2&1 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 同样后面毎一列加到第一列后，得到: $10\begin{vmatrix}1&4&3&2\\1&1&4&3\\1&2&1&4 \\1&3&2&1 \end{vmatrix}$<br>
+然后从 2 至 n 行从下至上依次减去上一行得到: $10\begin{vmatrix}1&4&3&2\\0&-3&1&1\\0&1&-3&1 \\0&1&1&-3 \end{vmatrix}$。<br>
+代入公式得 $10*(-3+2)(-4)^2=-160$
+  </details>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>其他变式，但是仍然利用和相等的性质来化上(下)三角来处理。</p>
+<ol>
+<li><p>计算行列式$\begin{vmatrix}1+a&1&1&\cdots&1\\ 2&2+a&2&\cdots&2\\ 3&3&3+a&\cdots&3\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ n&n&n&\cdots&n+a \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 这里只有列和相等，所以后面毎一行加到第一行后，得到: $[a+\frac{n(n+1)}{2}]\begin{vmatrix}1&1&1&\cdots&1\\ 2&2+a&2&\cdots&2\\ 3&3&3+a&\cdots&3\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ n&n&n&\cdots&n+a \end{vmatrix}$  <br>
+ 然后将第一行倍乘后依次减去下面各行得到: $[a+\frac{n(n+1)}{2}]\begin{vmatrix}1&1&1&\cdots&1\\ 0&a&2&\cdots&0\\ 0&0&a&\cdots&0\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ 0&0&0&\cdots&a \end{vmatrix}$ $=[a+\frac{n(n+1)}{2}]a^{n-1}$
+  </details>
+</li>
+<li><p>计算行列式$\begin{vmatrix}a&0&-1&1\\0&a&1&-1\\-1&1&a&0 \\1&-1&0&a \end{vmatrix}$</p>
+</li>
+</ol>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 这题有点怪，哪怕用了行列相等的性质，也不是很好处理，倒不如直接凑更多的 0 硬算。答案是 $a^4-4a^2$。
+  </details>
+## 爪型
+
+<p>利用主(副)对角线来消除一行或一列成为上(下)三角型。</p>
+<p>介绍一个加边法，如果除主对角线元素以外，其余列均相同或有相同倍数，则可以通过加边法将行列式变化成爪型。</p>
+<ol>
+<li><p>计算行列式$\begin{vmatrix}1&0&0&1\\0&2&0&1\\0&0&3&1 \\1&1&1&4 \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+ 行变换后有：$\begin{vmatrix}1&0&0&1\\0&2&0&1\\0&0&3&1 \\0&0&0&\frac{13}{6} \end{vmatrix}$$=13$
+  </details>
+</li>
+<li><p>计算行列式$\begin{vmatrix}a+b_1&a&\cdots&a\\a&a+b_2&\cdots&a\\\vdots&\vdots&\ddots&\vdots \\a&a&\cdots&a+b_n \end{vmatrix}$</p>
+<details>
+    <summary> <span style="font-weight:bold;color:#2ECC71;font-size:17px"> 🔍 点击显示解答
+ </summary>
+加边后有:$\begin{vmatrix}1&0&0&\cdots&0\\a&a+b_1&a&\cdots&a\\a&a&a+b_2&\cdots&a\\\vdots&\vdots&\vdots&\ddots&\vdots \\a&a&a&\cdots&a+b_n \end{vmatrix}$ <br>
+第二列到第n+1列依次减去第一列得到:$\begin{vmatrix}1&-1&-1&\cdots&-1\\a&b_1&0&\cdots&0\\a&0&b_2&\cdots&0\\\vdots&\vdots&\vdots&\ddots&\vdots \\a&0&0&\cdots&b_n \end{vmatrix}$<br>
+再回到正常的爪型处理，得到答案:$b^n+b^{n-1}\displaystyle\sum_{i=1}^{n}a_i^2$
+  </details>
+</li>
+<li><p>333啊啊啊sssaa企鹅</p>
+</li>
+</ol>
+<p>奥术大师大撒大所多撒</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">黄油小熊</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/">http://example.com/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">黄油小熊的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a></div><div class="post-share"><div class="social-share" data-image="/img/cover.avif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/07/17/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E5%8F%8A%E5%85%B6%E8%BF%90%E7%94%A8/" title="函数连续性质及其运用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">函数连续性质及其运用</div></div><div class="info-2"><div class="info-item-1">极限和连续性质的究极运用</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/15/n%E9%A1%B9%E5%92%8C%E6%9E%81%E9%99%90%E5%A4%A7%E4%B8%80%E7%BB%9F/" title="n项和极限大一统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-15</div><div class="info-item-2">n项和极限大一统</div></div><div class="info-2"><div class="info-item-1">介绍了n项和极限的三大主流方法</div></div></div></a><a class="pagination-related" href="/2025/07/17/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E5%8F%8A%E5%85%B6%E8%BF%90%E7%94%A8/" title="函数连续性质及其运用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-17</div><div class="info-item-2">函数连续性质及其运用</div></div><div class="info-2"><div class="info-item-1">极限和连续性质的究极运用</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butter-bear.avif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">黄油小熊</div><div class="author-info-description">FROM A TO Z</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">龚湘玲是大美女！！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A1%8C%E5%88%97%E5%BC%8F%E8%AE%A1%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text">具体行列式计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%88%E5%AD%97%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">么字型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E4%BD%8E%E9%98%B6%E4%B9%88%E5%AD%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">显式低阶么字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F-n-%E9%98%B6%E4%B9%88%E5%AD%97"><span class="toc-number">1.1.2.</span> <span class="toc-text">显式 n 阶么字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E4%BD%8E%E9%98%B6%E4%B9%88%E5%AD%97"><span class="toc-number">1.1.3.</span> <span class="toc-text">隐式低阶么字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X-%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">X 型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5-x-%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">直接 x 型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-x-%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">类 x 型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8C%83%E5%BE%B7%E8%92%99%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">范德蒙式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%8D%E5%8A%A0%E5%87%91%E4%B8%80%E5%9E%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">倍加凑一型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%B3%BB%E6%95%B0%E5%87%91%E4%B8%80%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">提系数凑一型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C-%E5%88%97-%E5%92%8C%E7%9B%B8%E7%AD%89"><span class="toc-number">1.4.</span> <span class="toc-text">行(列)和相等</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ab-%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">ab 型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E8%97%8F-ab-%E5%9E%8B"><span class="toc-number">1.4.2.</span> <span class="toc-text">隐藏 ab 型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.4.3.</span> <span class="toc-text">其他</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/" title="行列式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="行列式"/></a><div class="content"><a class="title" href="/2025/08/18/%E8%A1%8C%E5%88%97%E5%BC%8F/" title="行列式">行列式</a><time datetime="2025-08-18T02:16:28.000Z" title="发表于 2025-08-18 10:16:28">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/17/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E5%8F%8A%E5%85%B6%E8%BF%90%E7%94%A8/" title="函数连续性质及其运用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="函数连续性质及其运用"/></a><div class="content"><a class="title" href="/2025/07/17/%E5%87%BD%E6%95%B0%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E5%8F%8A%E5%85%B6%E8%BF%90%E7%94%A8/" title="函数连续性质及其运用">函数连续性质及其运用</a><time datetime="2025-07-17T02:13:13.000Z" title="发表于 2025-07-17 10:13:13">2025-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/15/n%E9%A1%B9%E5%92%8C%E6%9E%81%E9%99%90%E5%A4%A7%E4%B8%80%E7%BB%9F/" title="n项和极限大一统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover.avif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="n项和极限大一统"/></a><div class="content"><a class="title" href="/2025/07/15/n%E9%A1%B9%E5%92%8C%E6%9E%81%E9%99%90%E5%A4%A7%E4%B8%80%E7%BB%9F/" title="n项和极限大一统">n项和极限大一统</a><time datetime="2025-07-15T10:09:40.000Z" title="发表于 2025-07-15 18:09:40">2025-07-15</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 黄油小熊</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
